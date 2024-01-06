@@ -1,0 +1,8 @@
+{
+    "scripts": {
+      "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
+      "start-client": "cd cmedia-hub-react-js && npm start",
+      "start-server": "cd cmedia-hub-node-api && npm start"
+    }
+  }
+  
