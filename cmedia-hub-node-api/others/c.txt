@@ -1,0 +1,399 @@
+Folder PATH listing
+Volume serial number is F27D-7B15
+C:.
+ÃÄÄÄ.vscode
+ÃÄÄÄconfig
+ÃÄÄÄcontrollers
+ÃÄÄÄmedia_files
+³   ÃÄÄÄaudio
+³   ÃÄÄÄdocs
+³   ÃÄÄÄimages
+³   ÃÄÄÄothers
+³   ÀÄÄÄvideos
+ÃÄÄÄmiddleware
+ÃÄÄÄmodels
+ÃÄÄÄnode_modules
+³   ÃÄÄÄ.bin
+³   ÃÄÄÄ@types
+³   ³   ÃÄÄÄdebug
+³   ³   ÃÄÄÄms
+³   ³   ÃÄÄÄnode
+³   ³   ³   ÃÄÄÄassert
+³   ³   ³   ÃÄÄÄdns
+³   ³   ³   ÃÄÄÄfs
+³   ³   ³   ÃÄÄÄreadline
+³   ³   ³   ÃÄÄÄstream
+³   ³   ³   ÃÄÄÄtimers
+³   ³   ³   ÀÄÄÄts4.8
+³   ³   ³       ÃÄÄÄassert
+³   ³   ³       ÃÄÄÄdns
+³   ³   ³       ÃÄÄÄfs
+³   ³   ³       ÃÄÄÄreadline
+³   ³   ³       ÃÄÄÄstream
+³   ³   ³       ÀÄÄÄtimers
+³   ³   ÀÄÄÄvalidator
+³   ³       ÃÄÄÄes
+³   ³       ³   ÀÄÄÄlib
+³   ³       ÀÄÄÄlib
+³   ÃÄÄÄabbrev
+³   ÃÄÄÄaccepts
+³   ÃÄÄÄanymatch
+³   ÃÄÄÄappend-field
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄarray-flatten
+³   ÃÄÄÄbalanced-match
+³   ³   ÀÄÄÄ.github
+³   ÃÄÄÄbinary-extensions
+³   ÃÄÄÄbody-parser
+³   ³   ÀÄÄÄlib
+³   ³       ÀÄÄÄtypes
+³   ÃÄÄÄbrace-expansion
+³   ÃÄÄÄbraces
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄbuffer-from
+³   ÃÄÄÄbusboy
+³   ³   ÃÄÄÄ.github
+³   ³   ³   ÀÄÄÄworkflows
+³   ³   ÃÄÄÄbench
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÀÄÄÄtypes
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄbytes
+³   ÃÄÄÄcall-bind
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄchokidar
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtypes
+³   ÃÄÄÄconcat-map
+³   ³   ÃÄÄÄexample
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄconcat-stream
+³   ÃÄÄÄcontent-disposition
+³   ÃÄÄÄcontent-type
+³   ÃÄÄÄcookie
+³   ÃÄÄÄcookie-signature
+³   ÃÄÄÄcore-util-is
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄdebug
+³   ³   ÀÄÄÄsrc
+³   ÃÄÄÄdefine-data-property
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄdenque
+³   ÃÄÄÄdepd
+³   ³   ÀÄÄÄlib
+³   ³       ÀÄÄÄbrowser
+³   ÃÄÄÄdestroy
+³   ÃÄÄÄdottie
+³   ÃÄÄÄee-first
+³   ÃÄÄÄencodeurl
+³   ÃÄÄÄescape-html
+³   ÃÄÄÄetag
+³   ÃÄÄÄexpress
+³   ³   ÀÄÄÄlib
+³   ³       ÃÄÄÄmiddleware
+³   ³       ÀÄÄÄrouter
+³   ÃÄÄÄfill-range
+³   ÃÄÄÄfinalhandler
+³   ÃÄÄÄforwarded
+³   ÃÄÄÄfresh
+³   ÃÄÄÄfunction-bind
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄgenerate-function
+³   ÃÄÄÄget-intrinsic
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄglob-parent
+³   ÃÄÄÄgopd
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄhas-flag
+³   ÃÄÄÄhas-property-descriptors
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄhas-proto
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄhas-symbols
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ³       ÀÄÄÄshams
+³   ÃÄÄÄhasown
+³   ³   ÀÄÄÄ.github
+³   ÃÄÄÄhttp-errors
+³   ÃÄÄÄiconv-lite
+³   ³   ÃÄÄÄencodings
+³   ³   ³   ÀÄÄÄtables
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄignore-by-default
+³   ÃÄÄÄinflection
+³   ³   ÃÄÄÄ.vscode
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄinherits
+³   ÃÄÄÄipaddr.js
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄis-binary-path
+³   ÃÄÄÄis-extglob
+³   ÃÄÄÄis-glob
+³   ÃÄÄÄis-number
+³   ÃÄÄÄis-property
+³   ÃÄÄÄisarray
+³   ÃÄÄÄlodash
+³   ³   ÀÄÄÄfp
+³   ÃÄÄÄlong
+³   ³   ÀÄÄÄumd
+³   ÃÄÄÄlru-cache
+³   ÃÄÄÄmedia-typer
+³   ÃÄÄÄmerge-descriptors
+³   ÃÄÄÄmethods
+³   ÃÄÄÄmime
+³   ³   ÀÄÄÄsrc
+³   ÃÄÄÄmime-db
+³   ÃÄÄÄmime-types
+³   ÃÄÄÄminimatch
+³   ÃÄÄÄminimist
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄexample
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄmkdirp
+³   ³   ÀÄÄÄbin
+³   ÃÄÄÄmoment
+³   ³   ÃÄÄÄdist
+³   ³   ³   ÀÄÄÄlocale
+³   ³   ÃÄÄÄlocale
+³   ³   ÃÄÄÄmin
+³   ³   ÃÄÄÄsrc
+³   ³   ³   ÃÄÄÄlib
+³   ³   ³   ³   ÃÄÄÄcreate
+³   ³   ³   ³   ÃÄÄÄduration
+³   ³   ³   ³   ÃÄÄÄformat
+³   ³   ³   ³   ÃÄÄÄlocale
+³   ³   ³   ³   ÃÄÄÄmoment
+³   ³   ³   ³   ÃÄÄÄparse
+³   ³   ³   ³   ÃÄÄÄunits
+³   ³   ³   ³   ÀÄÄÄutils
+³   ³   ³   ÀÄÄÄlocale
+³   ³   ÀÄÄÄts3.1-typings
+³   ÃÄÄÄmoment-timezone
+³   ³   ÃÄÄÄbuilds
+³   ³   ÀÄÄÄdata
+³   ³       ÃÄÄÄmeta
+³   ³       ÀÄÄÄpacked
+³   ÃÄÄÄms
+³   ÃÄÄÄmulter
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄstorage
+³   ÃÄÄÄmysql2
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÃÄÄÄauth_plugins
+³   ³   ³   ÃÄÄÄcommands
+³   ³   ³   ÃÄÄÄconstants
+³   ³   ³   ÃÄÄÄpackets
+³   ³   ³   ÀÄÄÄparsers
+³   ³   ÃÄÄÄnode_modules
+³   ³   ³   ÃÄÄÄiconv-lite
+³   ³   ³   ³   ÃÄÄÄ.github
+³   ³   ³   ³   ÃÄÄÄ.idea
+³   ³   ³   ³   ³   ÃÄÄÄcodeStyles
+³   ³   ³   ³   ³   ÀÄÄÄinspectionProfiles
+³   ³   ³   ³   ÃÄÄÄencodings
+³   ³   ³   ³   ³   ÀÄÄÄtables
+³   ³   ³   ³   ÀÄÄÄlib
+³   ³   ³   ÃÄÄÄlru-cache
+³   ³   ³   ³   ÀÄÄÄdist
+³   ³   ³   ³       ÃÄÄÄcjs
+³   ³   ³   ³       ÀÄÄÄmjs
+³   ³   ³   ÀÄÄÄsqlstring
+³   ³   ³       ÀÄÄÄlib
+³   ³   ÀÄÄÄtypings
+³   ³       ÀÄÄÄmysql
+³   ³           ÀÄÄÄlib
+³   ³               ÃÄÄÄconstants
+³   ³               ÃÄÄÄparsers
+³   ³               ÀÄÄÄprotocol
+³   ³                   ÃÄÄÄpackets
+³   ³                   ³   ÀÄÄÄparams
+³   ³                   ÀÄÄÄsequences
+³   ³                       ÀÄÄÄpromise
+³   ÃÄÄÄnamed-placeholders
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÀÄÄÄlru-cache
+³   ÃÄÄÄnegotiator
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄnodemon
+³   ³   ÃÄÄÄbin
+³   ³   ÃÄÄÄdoc
+³   ³   ³   ÀÄÄÄcli
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÃÄÄÄcli
+³   ³   ³   ÃÄÄÄconfig
+³   ³   ³   ÃÄÄÄhelp
+³   ³   ³   ÃÄÄÄmonitor
+³   ³   ³   ÃÄÄÄrules
+³   ³   ³   ÀÄÄÄutils
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÃÄÄÄdebug
+³   ³       ³   ÀÄÄÄsrc
+³   ³       ÀÄÄÄms
+³   ÃÄÄÄnopt
+³   ³   ÃÄÄÄbin
+³   ³   ÃÄÄÄexamples
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄnormalize-path
+³   ÃÄÄÄobject-assign
+³   ÃÄÄÄobject-inspect
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄexample
+³   ³   ÀÄÄÄtest
+³   ³       ÀÄÄÄbrowser
+³   ÃÄÄÄon-finished
+³   ÃÄÄÄparseurl
+³   ÃÄÄÄpath-to-regexp
+³   ÃÄÄÄpg-connection-string
+³   ÃÄÄÄpicomatch
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄprocess-nextick-args
+³   ÃÄÄÄproxy-addr
+³   ÃÄÄÄpstree.remy
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtests
+³   ³       ÀÄÄÄfixtures
+³   ÃÄÄÄqs
+³   ³   ÃÄÄÄ.github
+³   ³   ÃÄÄÄdist
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄrange-parser
+³   ÃÄÄÄraw-body
+³   ÃÄÄÄreadable-stream
+³   ³   ÃÄÄÄdoc
+³   ³   ³   ÀÄÄÄwg-meetings
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÀÄÄÄinternal
+³   ³   ³       ÀÄÄÄstreams
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÀÄÄÄsafe-buffer
+³   ÃÄÄÄreaddirp
+³   ÃÄÄÄretry-as-promised
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄsafe-buffer
+³   ÃÄÄÄsafer-buffer
+³   ÃÄÄÄsemver
+³   ³   ÃÄÄÄbin
+³   ³   ÃÄÄÄclasses
+³   ³   ÃÄÄÄfunctions
+³   ³   ÃÄÄÄinternal
+³   ³   ÀÄÄÄranges
+³   ÃÄÄÄsend
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÀÄÄÄms
+³   ÃÄÄÄseq-queue
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄsequelize
+³   ³   ÃÄÄÄlib
+³   ³   ³   ÃÄÄÄassociations
+³   ³   ³   ÃÄÄÄdialects
+³   ³   ³   ³   ÃÄÄÄabstract
+³   ³   ³   ³   ³   ÀÄÄÄquery-generator
+³   ³   ³   ³   ÃÄÄÄdb2
+³   ³   ³   ³   ÃÄÄÄmariadb
+³   ³   ³   ³   ÃÄÄÄmssql
+³   ³   ³   ³   ÃÄÄÄmysql
+³   ³   ³   ³   ÃÄÄÄoracle
+³   ³   ³   ³   ÃÄÄÄpostgres
+³   ³   ³   ³   ÃÄÄÄsnowflake
+³   ³   ³   ³   ÀÄÄÄsqlite
+³   ³   ³   ÃÄÄÄerrors
+³   ³   ³   ³   ÃÄÄÄconnection
+³   ³   ³   ³   ÃÄÄÄdatabase
+³   ³   ³   ³   ÀÄÄÄvalidation
+³   ³   ³   ÃÄÄÄgeneric
+³   ³   ³   ÀÄÄÄutils
+³   ³   ÃÄÄÄnode_modules
+³   ³   ³   ÃÄÄÄdebug
+³   ³   ³   ³   ÀÄÄÄsrc
+³   ³   ³   ÀÄÄÄms
+³   ³   ÀÄÄÄtypes
+³   ³       ÃÄÄÄassociations
+³   ³       ÃÄÄÄdialects
+³   ³       ³   ÃÄÄÄabstract
+³   ³       ³   ÃÄÄÄmssql
+³   ³       ³   ÀÄÄÄsqlite
+³   ³       ÃÄÄÄerrors
+³   ³       ³   ÃÄÄÄconnection
+³   ³       ³   ÃÄÄÄdatabase
+³   ³       ³   ÀÄÄÄvalidation
+³   ³       ÃÄÄÄgeneric
+³   ³       ÀÄÄÄutils
+³   ÃÄÄÄsequelize-pool
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtypes
+³   ÃÄÄÄserve-static
+³   ÃÄÄÄset-function-length
+³   ³   ÀÄÄÄ.github
+³   ÃÄÄÄsetprototypeof
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄside-channel
+³   ³   ÃÄÄÄ.github
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄsimple-update-notifier
+³   ³   ÃÄÄÄbuild
+³   ³   ÀÄÄÄsrc
+³   ÃÄÄÄstatuses
+³   ÃÄÄÄstreamsearch
+³   ³   ÃÄÄÄ.github
+³   ³   ³   ÀÄÄÄworkflows
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄtest
+³   ÃÄÄÄstring_decoder
+³   ³   ÃÄÄÄlib
+³   ³   ÀÄÄÄnode_modules
+³   ³       ÀÄÄÄsafe-buffer
+³   ÃÄÄÄsupports-color
+³   ÃÄÄÄto-regex-range
+³   ÃÄÄÄtoidentifier
+³   ÃÄÄÄtoposort-class
+³   ³   ÃÄÄÄbenchmark
+³   ³   ³   ÀÄÄÄ0.3.1
+³   ³   ÀÄÄÄbuild
+³   ÃÄÄÄtouch
+³   ³   ÀÄÄÄbin
+³   ÃÄÄÄtype-is
+³   ÃÄÄÄtypedarray
+³   ³   ÃÄÄÄexample
+³   ³   ÀÄÄÄtest
+³   ³       ÀÄÄÄserver
+³   ÃÄÄÄundefsafe
+³   ³   ÃÄÄÄ.github
+³   ³   ³   ÀÄÄÄworkflows
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄundici-types
+³   ÃÄÄÄunpipe
+³   ÃÄÄÄutil-deprecate
+³   ÃÄÄÄutils-merge
+³   ÃÄÄÄuuid
+³   ³   ÀÄÄÄdist
+³   ³       ÃÄÄÄbin
+³   ³       ÃÄÄÄesm-browser
+³   ³       ÃÄÄÄesm-node
+³   ³       ÀÄÄÄumd
+³   ÃÄÄÄvalidator
+³   ³   ÃÄÄÄes
+³   ³   ³   ÀÄÄÄlib
+³   ³   ³       ÀÄÄÄutil
+³   ³   ÀÄÄÄlib
+³   ³       ÀÄÄÄutil
+³   ÃÄÄÄvary
+³   ÃÄÄÄwkx
+³   ³   ÃÄÄÄdist
+³   ³   ÀÄÄÄlib
+³   ÃÄÄÄxtend
+³   ÀÄÄÄyallist
+ÃÄÄÄpublic
+ÃÄÄÄroutes
+ÀÄÄÄservices

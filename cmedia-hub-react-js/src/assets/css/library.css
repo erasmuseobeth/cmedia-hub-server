@@ -1,0 +1,122 @@
+.library{
+    gap: 0.5rem;
+}
+.library-heading{
+    width: 100%;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+
+}
+
+.clay5 {
+    /* background:#ffffff; */
+    background:#000000;
+
+    text-align: center;
+    border-radius: 2rem;
+    /* box-shadow: 24px 24px 48px rgba(159, 211, 248, 0.4), */
+      /* inset 12px 12px 24px #dbe3e7, */
+       /* inset -24px -24px 48px #b8d8ee; */
+  }
+.library-card{
+    /* flex: 1 auto; */
+    border: 1px solid white;
+    margin: 1rem;
+    background-color:rgb(255, 255, 255);
+    background-color:rgb(0, 0, 0);
+
+    color: #000000;
+    color:#ffffff;
+
+    width: 18rem;
+    height: 15rem;
+    position: relative;
+}
+.library-card-overlay:hover{
+    /* content:"⯈"; */
+    width: 17.8rem;
+    height: 14.8rem;
+    position: absolute;
+    background:#000000;
+    /* opacity: 0.5; */
+    text-align: center;
+    /* font-size: 6rem; */
+    color:#ffffff;
+    border:1px solid white;
+    border-radius:2rem;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.library-illustration{
+    font-size: 2rem;
+    text-align: center;
+    height: 10rem;
+}
+.library-illustration img{
+    border-radius:2rem;
+
+}
+.plus-icon{
+    display: block;
+    text-align: center;
+    font-size: 5rem;
+    margin-top: -2rem;
+}
+
+.library-info{
+    padding: 1rem;
+    font-size: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.library-title{
+    width: 80%;
+    font-size: 1.5rem;
+    text-align: left;
+}
+.library-options {
+    position: relative;
+    color:#000000;
+    color:#ffffff;
+
+}
+
+.library-options-hidden{
+    display: none;
+    position: absolute;
+    background:rgba(0, 0, 0, 0.9);
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    padding: 0.125rem;
+    top: -9.5rem;
+    left: -6.5rem;
+}
+.library-options-hidden::after{
+    content:" ";
+    height: 0.75rem;
+    background:transparent;
+}
+.library-options:hover .library-options-hidden{
+    display: flex;
+    text-align: left;
+}
+.library-options-hidden i{
+    color:rgb(255, 255, 255);
+    font-size: 0.75rem;
+    text-wrap: nowrap;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin: 0.125rem;
+    }
+    .library-options-hidden i:before{
+        padding-right: 0.5rem;
+        font-size: 1rem;
+    }
+    .library-options-hidden i:hover{
+        background:#000000a3;
+        
+    }
+

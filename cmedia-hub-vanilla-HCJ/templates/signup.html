@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../statics/icons/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../statics/css/test-card.css">
+    <link rel="stylesheet" href="../statics/css/cmedia-hub.css">
+    <link rel="stylesheet" href="../statics/css/login.css">
+
+
+    <title>cmedia-hub Signup</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-top flex">
+            <div class="nav-left flex">
+                <div class="nav-toggler-container">
+                   <i class="fas fa-bars nav-toggler" id="nav-toggler"></i>
+                </div>
+                <div class="nav-logo-container">
+                    <!-- <img src="" alt="" class="nav-logo"> -->
+                    <span class="logo-text">cmedia-hub</span>
+                </div>
+            </div>
+
+            <div class="search-container flex-cc">
+                <input type="search" name="search-query" class="search-bar" id="search">
+                <span class="search-icon" id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+
+            <div class="nav-right flex">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./upload.html" class="nav-link">Upload</a>
+                <a href="./stream.html" class="nav-link">Stream</a>
+                <a href="./explore.html" class="nav-link">Explore</a>
+                <a href="./login.html" class="nav-link">Login</a>
+                <i class="fas fa-ellipsis-vertical more-nav-right" id="more-nav-right">
+                    <div class="hidden flex-col" id="more-nav-right-hidden">
+                        <a href="./index.html" class="nav-link">Home</a>
+                        <a href="#" class="nav-link">Explore</a>
+                        <a href="/login.html" class="nav-link">Login</a>
+                        <a href="./signup.html" class="nav-link">Signup</a>
+                        <a href="#" class="nav-link">Support</a>
+                        <a href="#" class="nav-link">Contact</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </i>
+            </div>
+        </div>    
+       
+        <div class="nav-sidebar flex-col scrollable" id="nav-sidebar">
+            <a href="./login.html" class="nav-link"><i class="fas fa-house active"></i>Home</a>
+            <a href="#" class="nav-link"><i class="fas fa-user"></i>Profile</a>
+            <a href="#" class="nav-link"><i class="fas fa-compass"></i>Stream</a>
+            <a href="#" class="nav-link"><i class="fas fa-compass"></i>Upload</a>
+            <a href="#" class="nav-link"><i class="fas fa-compass"></i>Download</a>
+            <a href="#" class="nav-link"><i class="fas fa-compass"></i>Explore</a>
+            <a href="#" class="nav-link"><i class="fas fa-video"></i>Library</a>
+            <a href="#" class="nav-link"><i class="fas fa-house"></i>Playlists</a>
+            <a href="#" class="nav-link"><i class="fas fa-file-video"></i>Movies</a>
+            <a href="#" class="nav-link"><i class="fas fa-video-camera"></i>Videos</a>
+            <a href="#" class="nav-link"><i class="fas fa-music"></i>Music</a>
+            <a href="#" class="nav-link"><i class="fas fa-photo-video"></i>Photos</a>
+            <a href="#" class="nav-link"><i class="fas fa-clock-rotate-left"></i>History</a>
+            <a href="#" class="nav-link"><i class="fas fa-gear"></i>Settings</a>
+        </div>
+    </nav>
+
+    <main>
+
+      <div class="signup flex-cc">
+        <form action="#" class="flex-col form signup-form">
+          <h2 class="form-heading flex-cc">Signup</h2>
+          <input type="text" name="username-or-email" id="username-or-email" placeholder="Email or Username" required>
+          <input type="password" name="password" id="password" placeholder="Password" required class="password-field">
+          <div class="agreement flex-cc">
+            <input type="checkbox" name="agreement" id="agreement">Terms and Policies
+          </div>
+         
+          <button type="submit" id="signup-form-submit" class="btn">Signup</button>
+          <div class="flex-col form-other-auths">
+            <p class="flex-cc form-or">or</p>
+            <div class="form-other-auths-icon">
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <p class="flex-cc form-login-link">Already have an account ? &nbsp; <a href="./login.html">Login</a></p>
+          </div>
+        </form>
+      </div>
+
+    </main>
+    
+
+    <footer class="footer flex-wr">
+        <div class="footer-card">
+            <h2 class="footer-heading">Account</h2>
+            <a href="" class="footer-link">Login</a>
+            <a href="" class="footer-link">Register</a>
+            <a href="" class="footer-link">Forgot password</a>
+            <a href="" class="footer-link">Support</a>
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-heading">About</h2>
+            <a href="" class="footer-link">Cmedia-hub</a>
+            <a href="" class="footer-link">Support</a>
+            <a href="" class="footer-link">Project</a>
+            <a href="" class="footer-link">Cyber330d</a>
+            <a href="" class="footer-link">Documentation</a>
+
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-heading">Libraries</h2>
+            <a href="" class="footer-link">Videos</a>
+            <a href="" class="footer-link">Audio</a>
+            <a href="" class="footer-link">Images</a>
+            <a href="" class="footer-link">Movies</a>
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-heading"></h2>
+            <a href="" class="footer-link">Playlist</a>
+            <a href="" class="footer-link">Categories</a>
+            <a href="" class="footer-link">Stream</a>
+            <a href="" class="footer-link">Upload</a>
+            <a href="" class="footer-link">Download</a>
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-heading"></h2>
+            <a href="" class="footer-link">Playlist</a>
+            <a href="" class="footer-link">Categories</a>
+            <a href="" class="footer-link">Stream</a>
+            <a href="" class="footer-link">Upload</a>
+            <a href="" class="footer-link">Download</a>
+        </div> 
+        <div class="footer-card social flex">
+            <h2 class="footer-heading">Follow Us On</h2>
+            <a href="http://www.youtube.com" class="footer-link"><i class="fa-brands fa-youtube"></i></a>
+            <a href="http://www.facebook.com" class="footer-link"><i class="fa-brands fa-facebook"></i></a>
+            <a href="http://www.whatsapp.com" class="footer-link"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="http://www.reddis.com" class="footer-link"><i class="fa-brands fa-reddit"></i></a>
+            <a href="http://www.tiktok.com" class="footer-link"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="http://www.discord.com" class="footer-link"><i class="fa-brands fa-discord"></i></a>
+        </div>
+        <div class="footer-card copyright neon">
+            <p class="neon-txt">Developed by <a href="" class="copyright-text neon-txt">cyber330d</a></p>
+        </div>
+
+        
+    </footer>
+    <script src="../statics/js/cmedia-hub.js"></script>
+</body>
+</html>

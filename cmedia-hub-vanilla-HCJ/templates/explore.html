@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../statics/icons/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../statics/css/test-card.css">
+    <link rel="stylesheet" href="../statics/css/cmedia-hub.css">
+    <link rel="stylesheet" href="../statics/css/explore.css">
+
+    <title>cmedia-hub</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-top flex g-card">
+            <div class="nav-left flex">
+                <div class="nav-toggler-container">
+                   <i class="fas fa-bars nav-toggler" id="nav-toggler"></i>
+                </div>
+                <div class="nav-logo-container">
+                    <!-- <img src="" alt="" class="nav-logo"> -->
+                    <span class="logo-text">cmedia-hub</span>
+                </div>
+            </div>
+
+            <div class="search-container flex-cc">
+                <input type="search" name="search-query" class="search-bar" id="search">
+                <span class="search-icon" id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+
+            <div class="nav-right flex">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Upload</a>
+                <a href="./stream.html" class="nav-link">Stream</a>
+                <a href="./explore.html" class="nav-link">Explore</a>
+                <a href="#" class="nav-link">Login</a>
+                <i class="fas fa-ellipsis-vertical more-nav-right" id="more-nav-right">
+                    <div class="hidden flex-col card g-card" id="more-nav-right-hidden">
+                        <a href="#" class="nav-link">Home</a>
+                        <a href="#" class="nav-link">Explore</a>
+                        <a href="#" class="nav-link">Login</a>
+                        <a href="#" class="nav-link">Register</a>
+                        <a href="#" class="nav-link">Support</a>
+                        <a href="#" class="nav-link">Contact</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </i>
+            </div>
+        </div>    
+       
+        <div class="nav-sidebar card flex-col scrollable" id="nav-sidebar">
+            <a href="./index.html" class="nav-link"><i class="fas fa-house active"></i>Home</a>
+            <a href="#" class="nav-link"><i class="fas fa-user"></i>Profile</a>
+            <a href="./stream.html" class="nav-link"><i class="fas fa-compass"></i>Stream</a>
+            <a href="#" class="nav-link"><i class="fas fa-compass"></i>Upload</a>
+            <a href="#" class="nav-link"><i class="fas fa-compass"></i>Download</a>
+            <a href="./explore.html" class="nav-link"><i class="fas fa-compass"></i>Explore</a>
+            <a href="#" class="nav-link"><i class="fas fa-video"></i>Library</a>
+            <a href="#" class="nav-link"><i class="fas fa-house"></i>Playlists</a>
+            <a href="#" class="nav-link"><i class="fas fa-file-video"></i>Movies</a>
+            <a href="./video.html" class="nav-link"><i class="fas fa-video-camera"></i>Videos</a>
+            <a href="#" class="nav-link"><i class="fas fa-music"></i>Music</a>
+            <a href="#" class="nav-link"><i class="fas fa-photo-video"></i>Photos</a>
+            <a href="#" class="nav-link"><i class="fas fa-clock-rotate-left"></i>History</a>
+            <a href="#" class="nav-link"><i class="fas fa-gear"></i>Settings</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="chips-wrapper flex-sb">
+            <div class="chips-container flex">
+                <div class="chip">Action</div>
+                <div class="chip">Comedy</div>
+                <div class="chip">Drama</div>
+                <div class="chip">Science Fiction</div>
+                <div class="chip">Horror</div>
+                <div class="chip">Adventure</div>
+                <div class="chip">Fantasy</div>
+                <div class="chip">Romance</div>
+                <div class="chip">Animation</div>
+                <div class="chip">Thriller</div>
+            </div>
+            <div class="filter-container-trigger"><span class="trigger-text">Filters</span><i class="fas fa-sliders"></i></div>    
+        </div>
+        <div id="filter-container" class="filter-container">
+            <button class="filter-cancel">X</button>
+            <h2>Filter Options</h2>
+        
+            <div class="filter-group flex-wr">
+                <h3 class="filter-label">Upload Date:</h3>
+                <span class="filter">Last hour</span>
+                <span class="filter">Today</span>
+                <span class="filter">This week</span>
+                <span class="filter">This month</span>
+                <span class="filter">This year</span>
+                <span class="filter">Above 1 year</span>
+            </div>
+            
+            <div class="filter-group flex-wr">
+                <h3 class="filter-label">Duration:</h3>
+                <span class="filter">0-10 min</span>
+                <span class="filter">11-40 min</span>
+                <span class="filter">Less than 1hr</span>
+                <span class ="filter">40min to 2hrs</span>
+                <span class="filter">Above 1hr</span>
+            </div>
+        
+            <div class="filter-group flex-wr">
+                <h3 class="filter-label">Type:</h3>
+                <span class="filter">Video</span>
+                <span class="filter">Movie</span>
+                <span class="filter">Audio</span>
+                <!-- Add more type options as needed -->
+            </div>
+        
+            <div class="filter-group flex-wr">
+                <h3 class="filter-label">Features:</h3>
+                <span class="filter">Popular</span>
+                <span class="filter">User Channel</span>
+                <span class="filter">Collection</span>
+                <span class="filter">Views</span>
+            </div>
+        
+            <button class="apply-button">Apply Filters</button>
+        </div>
+        
+
+       <section class="video-list">
+        <div class="media-item">
+            <img src="../statics/images/bgo2.png" alt="" class="media-thumbnail">
+            <p class="media-title">media-title</p>
+            <div class="media-details flex-cc">
+                <span class="channel">yjjkk</span>
+                <span class="date-uploaded">12-80-89</span>
+                <span class="icons">fh</span>
+                <span class="duration">12:00</span>
+            </div>
+        </div>
+        <div class="media-item">
+            <img src="../statics/images/bgo2.png" alt="" class="media-thumbnail">
+            <p class="media-title">media-title</p>
+            <div class="media-details flex-cc">
+                <span class="channel">yjjkk</span>
+                <span class="date-uploaded">12-80-89</span>
+                <span class="icons">fh</span>
+                <span class="duration">12:00</span>
+            </div>
+        </div>
+        <div class="media-item">
+            <img src="../statics/images/bgo2.png" alt="" class="media-thumbnail">
+            <p class="media-title">media-title</p>
+            <div class="media-details flex-cc">
+                <span class="channel">yjjkk</span>
+                <span class="date-uploaded">12-80-89</span>
+                <span class="icons">fh</span>
+                <span class="duration">12:00</span>
+            </div>
+        </div>
+        <div class="media-item">
+            <img src="../statics/images/bgo2.png" alt="" class="media-thumbnail">
+            <p class="media-title">media-title</p>
+            <div class="media-details flex-cc">
+                <span class="channel">yjjkk</span>
+                <span class="date-uploaded">12-80-89</span>
+                <span class="icons">fh</span>
+                <span class="duration">12:00</span>
+            </div>
+        </div>
+        <div class="media-item">
+            <img src="../statics/images/bgo2.png" alt="" class="media-thumbnail">
+            <p class="media-title">media-title</p>
+            <div class="media-details flex-cc">
+                <span class="channel">yjjkk</span>
+                <span class="date-uploaded">12-80-89</span>
+                <span class="icons">fh</span>
+                <span class="duration">12:00</span>
+            </div>
+        </div>
+
+        <div class="media-item">
+            <img src="../statics/images/bgo2.png" alt="" class="media-thumbnail">
+            <p class="media-title">media-title</p>
+            <div class="media-details flex-cc">
+                <span class="channel">yjjkk</span>
+                <span class="date-uploaded">12-80-89</span>
+                <span class="icons">fh</span>
+                <span class="duration">12:00</span>
+            </div>
+        </div>
+        <div class="media-item">
+            <img src="../statics/images/bgo2.png" alt="" class="media-thumbnail">
+            <p class="media-title">media-title</p>
+            <div class="media-details flex-cc">
+                <span class="channel">yjjkk</span>
+                <span class="date-uploaded">12-80-89</span>
+                <span class="icons">fh</span>
+                <span class="duration">12:00</span>
+            </div>
+        </div>
+        <div class="media-item">
+            <img src="../statics/images/bgo2.png" alt="" class="media-thumbnail">
+            <p class="media-title">media-title</p>
+            <div class="media-details flex-cc">
+                <span class="channel">yjjkk</span>
+                <span class="date-uploaded">12-80-89</span>
+                <span class="icons">fh</span>
+                <span class="duration">12:00</span>
+            </div>
+        </div>
+       </section>
+
+    </main>
+    
+
+    <footer class="footer flex-wr">
+        <div class="footer-card">
+            <h2 class="footer-heading">Account</h2>
+            <a href="" class="footer-link">Login</a>
+            <a href="" class="footer-link">Register</a>
+            <a href="" class="footer-link">Forgot password</a>
+            <a href="" class="footer-link">Support</a>
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-heading">About</h2>
+            <a href="" class="footer-link">Cmedia-hub</a>
+            <a href="" class="footer-link">Support</a>
+            <a href="" class="footer-link">Project</a>
+            <a href="" class="footer-link">Cyber330d</a>
+            <a href="" class="footer-link">Documentation</a>
+
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-heading">Libraries</h2>
+            <a href="" class="footer-link">Videos</a>
+            <a href="" class="footer-link">Audio</a>
+            <a href="" class="footer-link">Images</a>
+            <a href="" class="footer-link">Movies</a>
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-heading"></h2>
+            <a href="" class="footer-link">Playlist</a>
+            <a href="" class="footer-link">Categories</a>
+            <a href="" class="footer-link">Stream</a>
+            <a href="" class="footer-link">Upload</a>
+            <a href="" class="footer-link">Download</a>
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-heading"></h2>
+            <a href="" class="footer-link">Playlist</a>
+            <a href="" class="footer-link">Categories</a>
+            <a href="" class="footer-link">Stream</a>
+            <a href="" class="footer-link">Upload</a>
+            <a href="" class="footer-link">Download</a>
+        </div> 
+        <div class="footer-card social flex">
+            <h2 class="footer-heading">Follow Us On</h2>
+            <a href="http://www.youtube.com" class="footer-link"><i class="fa-brands fa-youtube"></i></a>
+            <a href="http://www.facebook.com" class="footer-link"><i class="fa-brands fa-facebook"></i></a>
+            <a href="http://www.whatsapp.com" class="footer-link"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="http://www.reddis.com" class="footer-link"><i class="fa-brands fa-reddit"></i></a>
+            <a href="http://www.tiktok.com" class="footer-link"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="http://www.discord.com" class="footer-link"><i class="fa-brands fa-discord"></i></a>
+        </div>
+        <div class="footer-card copyright neon">
+            <p class="neon-txt">Developed by <a href="" class="copyright-text neon-txt">cyber330d</a></p>
+        </div>
+
+        
+    </footer>
+    <script src="../statics/js/cmedia-hub.js"></script>
+</body>
+</html>

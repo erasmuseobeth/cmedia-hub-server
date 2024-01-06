@@ -1,0 +1,10 @@
+--When a file is uploaded via the APi endpoint it can one or multiple files
+-- for each file asynchronously
+      -perform some sort of validation
+      -generate a a new filename which will also be the media id
+      -store media with new name
+      -extract uploaded media metadata including original name, id genereated above, uploaded date, by who,type,description,tags etc
+      -store the uploaded media to local storage
+      -save the metadata to mediametadatadb
+      -when metadata is saved call the background transcoding functon to process the file
+      -return an uplouad notification of success or failure for each of the uploaded file
