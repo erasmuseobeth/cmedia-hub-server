@@ -7,6 +7,6 @@
         // Add more custom paths as needed
       }
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*"],
   }
   

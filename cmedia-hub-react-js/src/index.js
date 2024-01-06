@@ -1,6 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './components/App';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faGoogle, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+library.add(faGoogle, faFacebook, faInstagram);
+
 // import App from '@components/App';
 
 

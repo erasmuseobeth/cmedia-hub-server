@@ -1,9 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Route, Link , createBrowserRouter,
+    createRoutesFromElements, RouterProvider }
+     from 'react-router-dom';
 import BaseLayout from '../pages/BaseLayout';
 import Home from '../pages/Home';
-import Login from '../pages/Login';
-import Signup from '../pages/Signup';
+import Login, { action as loginAction } from '../pages/forms/Login';
+import Signup from '../pages/forms/Signup';
 import Explore from '../pages/Explore';
 import Download  from '../pages/Download';
 import Upload from '../pages/Upload';
@@ -15,30 +17,30 @@ import Admin from '../pages/Admin';
 import ErrorPage from '../pages/ErrorPage';
 import '../assets/css/cmedia-hub.css'
 
-
+// action={ }
+// , { action as Action }
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={ <BaseLayout /> } errorElement={ < ErrorPage /> } >
+            <Route index element={ <Home /> }  />
+            <Route path="login" element={ <Login /> } action={ loginAction } />
+            <Route path="signup" element={ <Signup /> } />
+            <Route path="admin" element={ <Admin /> } />
+            <Route path="explore" element={ <Explore /> } />
+            <Route path="stream" element={ <Stream /> } />
+            <Route path="settings" element={ <Settings /> } />
+            <Route path="upload" element={ <Upload /> } />
+            <Route path="download" element={ <Download /> } />
+            <Route path="library" element={ <Library /> } />
+            <Route path="profile" element={ <Profile /> } />
+        </Route>
+    )
+  );
 
 const App = () => {
     return(
-        <Router>
-            <Routes>
-                {/* <Route>
-                    
-                </Route> */}
-                <Route path="/" element={ <BaseLayout /> } errorElement={ < ErrorPage /> } >
-                    <Route index element={ <Home /> }  />
-                    <Route path="login" element={ <Login /> } />
-                    <Route path="signup" element={ <Signup /> } />
-                    <Route path="admin" element={ <Admin /> } />
-                    <Route path="explore" element={ <Explore /> } />
-                    <Route path="stream" element={ <Stream /> } />
-                    <Route path="settings" element={ <Settings /> } />
-                    <Route path="upload" element={ <Upload /> } />
-                    <Route path="download" element={ <Download /> } />
-                    <Route path="library" element={ <Library /> } />
-                    <Route path="profile" element={ <Profile /> } />
-                </Route>
-            </Routes>
-        </Router>
+        <RouterProvider router={ router}/>
+
 
     );
 };

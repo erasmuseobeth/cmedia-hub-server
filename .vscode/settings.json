@@ -1,0 +1,143 @@
+{
+  "workbench.colorTheme": "YourChosenTheme", // Set your desired color theme here
+  "workbench.colorCustomizations": {
+    "editor.background": "#000000", // Black background for the editor
+    "sideBar.background": "#000000", // Black background for the sidebar
+    "activityBar.background": "#000000", // Black background for the activity bar
+    "statusBar.background": "#000000", // Black background for the status bar
+    "titleBar.background": "#000000" // Black background for the title bar
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "comment.block.documentation"
+        ],
+        "settings": {
+          "foreground": "#ffffff80" // Semi-transparent white for comments
+        }},
+      {
+        "scope": [
+          "punctuation.definition.block",
+          "punctuation.definition.array",
+          "punctuation.separator.key-value",
+          "punctuation.terminator.statement",
+          "punctuation.definition.list",
+          "support.type",
+          "support.class",
+          "support.function",
+          "support.module",
+          "support.variable",
+          "text.html.basic",
+          "text.html",
+          "meta.tag",
+          "meta.tag entity",
+          "meta.tag punctuation.definition.tag",
+          "meta.tag entity.name.tag"
+        ],
+        "settings": {
+          "foreground": "#FFFFFF" // White color for symbols
+        }
+      },
+
+      {
+        "scope": [
+          "entity.name",
+          "entity.other.attribute-name",
+          "entity.other.attribute-name.id",
+          "entity.other.attribute-name.class",
+          "entity.other.attribute-name.tag",
+          "meta.selector.attribute-number",
+          "constant.numeric.css",
+          "meta.attribute-selector",
+          "entity.other.attribute-name.class",
+          "entity.other.attribute-name.pseudo-class",
+          "variable.other.readwrite.template",
+          "variable.other.readwrite.type",
+          "variable.other.readwrite.color"
+        ],
+        "settings": {
+          "foreground": "#df3079" // Color for specified selectors and variables
+        }
+      },
+      {
+        "scope": [
+          "string",
+          "string.quoted",
+          "string.quoted.single",
+          "string.quoted.double",
+          "string.quoted.triple",
+          "string.quoted.other",
+          "string.unquoted",
+          "variable.other.readwrite",
+          "meta.string",
+          "string.regexp",
+          "keyword.control.addition",
+          "string",
+          "string.quoted",
+          "string.quoted.single",
+          "string.quoted.double",
+          "string.quoted.triple",
+          "string.quoted.other",
+          "string.unquoted",
+        ],
+        "settings": {
+          "foreground": "#00a67d" // Color for specified strings, attributes, meta-strings, regex, and additions
+        }
+      },
+      {
+        "scope": [
+          "variable",
+          "variable.other",
+          "variable.parameter",
+          "variable.function",
+          "variable.other.readwrite",
+          "variable.other.local",
+          "variable.other.readwrite.local",
+          "markup.list",
+          "markup.list.unnumbered",
+          "markup.list.numbered",
+          "markup.list.circle",
+          "markup.list.bullet",
+          "meta.selector",
+          "entity.other.attribute-name.id",
+          "punctuation.definition.id"
+        ],
+        "settings": {
+          "foreground": "#f22c3d" // Color for link bullets and list items
+        }
+      },
+      {
+        "scope": [
+          "meta.tag.doc-tag",
+          "markup.tag.doc-tag",
+          "meta.tag.formula",
+          "keyword.control.formula",
+          "keyword.formula",
+          "markup.tag.formula",
+          "keyword.control",
+          "keyword.literal",
+          "literal",
+          "keyword",
+          "keyword",
+          "keyword.control",
+          "keyword.operator",
+          "keyword.other"
+        ],
+        "settings": {
+          "foreground": "#2e95d3" // Color for doctags, formulas, and keywords
+        }
+      },
+      {
+        "scope": [
+          "support.type.builtin",
+          "entity.name.type.builtin"
+        ],
+        "settings": {
+          "foreground": "#e9950c" // Color for built-ins and class titles
+        }
+      },
+    ]
+  }
+}
