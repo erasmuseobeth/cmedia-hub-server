@@ -1,8 +1,12 @@
 {
-    "scripts": {
-      "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
-      "start-client": "cd cmedia-hub-react-js && npm start",
-      "start-server": "cd cmedia-hub-node-api && npm start"
-    }
+  "scripts": {
+    "start": "npm run start-client-server",
+    "start-client-server": "concurrently \"npm:client\" \"npm:server\"",
+    "client": "cd cmedia-hub-react-js && npm start",
+    "server": "cd cmedia-hub-node-api && npm start",
+    "build": "npm run build-client-server",
+    "build-client-server": "concurrently \"npm:build-client\" \"npm:build-server\"",
+    "build-client": "cd cmedia-hub-react-js && npm run build",
+    "build-server": "cd cmedia-hub-node-api && npm run build"
   }
-  
+}
