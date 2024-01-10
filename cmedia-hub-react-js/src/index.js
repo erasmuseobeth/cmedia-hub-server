@@ -2,9 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGoogle, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-library.add(faGoogle, faFacebook, faInstagram);
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faGoogle, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+// library.add(faGoogle, faFacebook, faInstagram);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSomeIcon } from '@fortawesome/free-solid-svg-icons';
+
 
 // import App from '@components/App';
 
