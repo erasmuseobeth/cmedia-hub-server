@@ -5,9 +5,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faGoogle, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 // library.add(faGoogle, faFacebook, faInstagram);
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSomeIcon } from '@fortawesome/free-solid-svg-icons';
-
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import App from '@components/App';
 

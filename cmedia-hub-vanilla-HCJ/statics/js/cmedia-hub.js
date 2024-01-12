@@ -1,5 +1,7 @@
 const navToggler = document.getElementById('nav-toggler');
 const navSideBar = document.getElementById('nav-sidebar');
+
+
 const moreNavRight = document.getElementById('more-nav-right');
 const moreNavRightHidden = document.getElementById('more-nav-right-hidden');
 

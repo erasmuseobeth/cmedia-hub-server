@@ -2,7 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSomeIcon } from '@fortawesome/free-solid-svg-icons';
+import {  faGoogle,faFacebook,faInstagram, } from '@fortawesome/free-brands-svg-icons';
+
 
 
 const FormButton = ( { btnText } ) => {
@@ -29,9 +30,10 @@ const OtherAuthOptions = ( { formLinkData } ) => {
         <div className="flex-col form-other-auths">
             <p className="flex-cc form-or">or</p>
             <div className="form-other-auths-icon">
-              <FontAwesomeIcon icon={['fab', 'google']} />
-              <FontAwesomeIcon icon={['fab', 'facebook']} />
-              <FontAwesomeIcon icon={['fab', 'instagram']} />
+            <FontAwesomeIcon icon={faGoogle} className='icon'/>
+            <FontAwesomeIcon icon={faFacebook} className='icon'/>
+            <FontAwesomeIcon icon={faInstagram} className='icon'/>
+
             </div>
             <FormLink {...formLinkData} />
           </div>
