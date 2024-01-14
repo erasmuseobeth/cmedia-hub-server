@@ -30,6 +30,6 @@ app.use((req, res, next) => {
 
 const port = process.env.PORT || 9000;
 app.listen(port, '0.0.0.0', () => {
-  console.log(`Cmedia-hub Server is running on http://0.0.0.0:${port}`);
+  console.log(`Cmedia-hub Server is running on http://localhost:${port}`);
 });
 

@@ -9,7 +9,7 @@
 
    --text-color-hover1:#ffffff33;
    --text-color-hover2:#ffffff33;
-
+   --neon-color1: white;
 
    --border-color1:#ffffff;
    --border-color2:#909090;
@@ -35,6 +35,22 @@
    /* Border colors */
 
   }
+  
+[class*="btn"]{
+  appearance: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 2rem;
+    font-size: 1rem;
+    line-height: 100%;
+    transition: all 1s ease;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    transition:all 0.6s ease-in-out;
+  } 
 
   .iconType1 {
     font-size: 1.5rem;
@@ -47,7 +63,7 @@
   }
 
   body{
-    padding-top: 5rem;
+    padding-top: 5rem!important;
   }
   
 header{
@@ -81,7 +97,9 @@ nav{
   font-size: 1.25rem;
 }
 
-.nav-link:hover{
+.nav-link:hover,
+.nav-link:active,
+.active{
   color: var(--bg-color1);
   background-color:var(--text-color1);
   transition: all 0.8s ease;;
@@ -150,6 +168,11 @@ nav{
 
 
 /* .nav-right{} */
+.nav-right .nav-link{
+  margin-left: 0.5rem;
+  
+}
+
 .nav-right .hidden{
   /* display: none; */
   position: absolute;
@@ -216,7 +239,7 @@ nav{
   padding-block:2rem;
 }
 
-.nav-sidebar i{
+.nav-sidebar .icon{
   padding-right: 1.4rem;
   font-size: 1rem;
 }
@@ -306,14 +329,20 @@ section{
 .nt-container{
   width: 100%;
   height: 28rem;
+  height: 90vh;
   box-shadow:none;
   border-radius:none;
   /* color:black; */
-  margin-bottom: 4rem;
+  /* margin-bottom: 8rem; */
+  /* margin-top: 4rem; */
+
 }
 
 .illustration,.illustration-text{
   width: 50%;
+  color:white;
+  /* padding-inline: 1rem; */
+
 }
 .illustration{
   width: 100%;
@@ -328,7 +357,11 @@ section{
   text-align: center;
 }
 .illustration-text::first-line{
-  font-size: 2rem;
+  font-size: 3rem;
+}
+
+.highlights{
+  margin-top: 6rem;
 }
 .highlights .nt-container{
   padding-top: 0.5rem;
@@ -336,23 +369,44 @@ section{
 .highlights .illustration-text{
   width: 100%;
   font-size: 1rem;
+  color:white;
+  padding-inline: 1.5rem;
+
+}
+.highlights .illustration-text::first-line{
+  font-size: 2rem;
 }
 .highlights .illustration{
   width: 100%;
   height: 50%;
   text-align: center;
-  margin: none;
+  margin: 0;
 }
-
 .highlights .illustration img{
   width: 100%;
   color: var(--text-color1);
 
 }
+
+.features{
+  padding-top: 0;
+}
+
+.features .nt-container{
+  margin-bottom: 8rem;
+
+}
+.features .illustration-text{
+  font-size: 2rem;
+  
+}
+.features .illustration-text::first-line{
+  /* font-size: 3rem; */
+}
 .footer{
     width: 100vw;
     color: var(--footer-link-color);
-    align-items: flex-start;
+    align-items: flex-start!important;
     justify-content: center;
     padding: 1rem;
     border-top:1px solid var(--border-color1);
@@ -809,17 +863,19 @@ section{
   .form-forgot-password:hover{
       text-decoration: underline;
   }
-  .form-other-auths{
-      align-items:center;
+  .other-auth-options{
+    margin:0 auto;
   }
-  .form-other-auths *{
+  .other-auth-options *{
       margin-block: 0.5rem;
   }
-  .form-other-auths-icon i {
+  .social-icon  {
       margin-right: 1rem;
   }
   .form-or{
       text-transform: uppercase;
+      margin:0 auto;
+
   }
   
   .form-link,
@@ -1360,21 +1416,6 @@ button{
   text-decoration: none;
 }
 
-[class*="btn"]{
-appearance: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 2rem;
-  font-size: 1rem;
-  line-height: 100%;
-  transition: all 1s ease;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 0.75rem 1rem;
-  transition:all 0.6s ease-in-out;
-} 
 
 .neon-btn {
     background-color: transparent;

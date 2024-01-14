@@ -1,5 +1,8 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faHouse,faUser,faCompass,faClockRotateLeft,faVideo,faFileVideo,faVideoCamera,faMusic,faPhotoVideo,faGear } from '@fortawesome/free-solid-svg-icons';
+
 import { useNavbar } from "./NavbarContext";
 
 const NavSidebar = () => {
@@ -7,25 +10,80 @@ const NavSidebar = () => {
     const { isSidebarVisible } = useNavbar();
 
     return isSidebarVisible ? (
-        
-        <div
-        id="nav-sidebar"
-        className='nav-sidebar card flex-col scrollable'>
-        <Link to="#" className="nav-link"><i className="fas fa-house active"></i>Home</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-user"></i>Profile</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-compass"></i>Stream</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-compass"></i>Upload</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-compass"></i>Download</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-compass"></i>Explore</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-video"></i>Library</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-house"></i>Playlists</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-file-video"></i>Movies</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-video-camera"></i>Videos</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-music"></i>Music</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-photo-video"></i>Photos</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-clock-rotate-left"></i>History</Link>
-        <Link to="#" className="nav-link"><i className="fas fa-gear"></i>Settings</Link>
-    </div>
+        <div id="nav-sidebar"
+            className='nav-sidebar card flex-col scrollable'>
+
+            <NavLink to="/" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faHouse} className='icon  active'/>
+                Home
+            </NavLink>
+
+            <NavLink to="profile" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faUser} className='icon'/>
+                Profile
+            </NavLink>
+
+            <NavLink to="stream" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faCompass} className='icon'/>
+                Stream
+            </NavLink>
+
+            <NavLink to="upload" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faCompass} className='icon'/>
+                Upload
+            </NavLink>
+
+            <NavLink to="download" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faCompass} className='icon'/>
+                Download
+            </NavLink>
+
+            <NavLink to="explore" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faCompass} className='icon'/>
+                Explore
+            </NavLink>
+
+            <NavLink to="library" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faVideo} className='icon'/>
+                Library
+            </NavLink>
+
+            <NavLink to="playlists" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faHouse} className='icon'/>
+                Playlists
+            </NavLink>
+
+            <NavLink to="movies" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faFileVideo} className='icon'/>
+                Movies
+            </NavLink>
+
+            <NavLink to="videos" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faVideoCamera} className='icon'/>
+                Videos
+            </NavLink>
+
+            <NavLink to="music" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faMusic} className='icon'/>
+                Music
+            </NavLink>
+
+            <NavLink to="photos" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faPhotoVideo} className='icon'/>
+                Photos
+            </NavLink>
+
+            <NavLink to="history" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faClockRotateLeft} className='icon'/>
+                History
+            </NavLink>
+
+            <NavLink to="settings" className="nav-link"  exact activeClassName="active">
+                <FontAwesomeIcon icon={faGear} className='icon'/>
+                Settings
+            </NavLink>
+
+        </div>
       ) : null;
 
 };

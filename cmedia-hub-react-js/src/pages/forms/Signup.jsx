@@ -19,7 +19,7 @@ const Signup = () => {
             
             <OtherAuthOptions formLinkData={{ 
               linkPrompt: "Already Have an Account ?", 
-              linkTo: "login", 
+              linkTo: "/login", 
               linkToText: "Login" }} />
 
           </Form>

@@ -28,12 +28,11 @@ const FormLink  = ( { linkPrompt, linkTo, linkToText, } ) => {
 const OtherAuthOptions = ( { formLinkData } ) => {
     return(
         <div className="flex-col form-other-auths">
-            <p className="flex-cc form-or">or</p>
-            <div className="form-other-auths-icon">
-            <FontAwesomeIcon icon={faGoogle} className='icon'/>
-            <FontAwesomeIcon icon={faFacebook} className='icon'/>
-            <FontAwesomeIcon icon={faInstagram} className='icon'/>
-
+            <p className="form-or">or</p>
+            <div className="other-auth-options">
+            <FontAwesomeIcon icon={faGoogle} className='icon social-icon'/>
+            <FontAwesomeIcon icon={faFacebook} className='icon social-icon'/>
+            <FontAwesomeIcon icon={faInstagram} className='icon social-icon'/>
             </div>
             <FormLink {...formLinkData} />
           </div>

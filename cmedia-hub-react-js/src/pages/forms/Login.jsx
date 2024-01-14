@@ -22,12 +22,15 @@ const Login = () => {
               <input type="password" name="password" id="password" placeholder="Password" required className="password-field" />
               <div className="form-account-recovery flex-sb">
                 <p className="form-remember-me flex-cc"><input type="checkbox" name="remember-me" id="remember-me" className="styled-checkbox" />Remember Me</p>
-                <Link to="./signup.html" className="form-forgot-password">Forgot Password&nbsp;?</Link>
+                <Link to="/signup" className="form-forgot-password">Forgot Password&nbsp;?</Link>
               </div>
 
               <FormButton btnText="Login" />
               
-              <OtherAuthOptions formLinkData={{ linkPrompt: "Already Have an Account ?", linkTo: "login", linkToText: "Login" }} />
+              <OtherAuthOptions formLinkData={{ 
+                linkPrompt: "Don't Have an Account ?", 
+                linkTo: "/signup", 
+                linkToText: "Signup" }} />
             </Form>
         </div>
     );

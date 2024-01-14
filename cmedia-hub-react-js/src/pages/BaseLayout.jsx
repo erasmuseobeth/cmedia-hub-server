@@ -1,28 +1,32 @@
 import React from 'react';
-import { Outlet} from 'react-router-dom';
+import { Outlet, useRoutes, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
+// import { routes } from '../components/App';
+
 // import Navbar from '@components/Navbar';
 
 
 const BaseLayout = () => {
+    const navigate = useNavigate();
+
+    const isHomeRoute = window.location.pathname === '/';
+  
+    // const element = useRoutes(routes);
+
     return(
         <>
-         {/* <header class="hero-landing">
-        //     <div class="hero">
-        //         <img src="../statics/images/img1.png" alt="" class="hero-img" id="hero-img1">
-        //         <div class="cta flex-wr flex-cc card">
-        //             <div class="cta-txt">Watch Manage Access and Share your Media  with ease at Home all stored in one Home server!!!</div>
-        //             <button class="cta-btn nav-link">Watch</button>
-        //             <button class="cta-btn nav-link" id="explore">Explore</button>
-        //         </div>
-        //     </div>
-         </header> */}
+      
         <Navbar />
-        <Outlet />
+        {/* Conditionally render the Header only for the home route */}
+        {/* {element && element.props?.path === '/' && <Header />} */}
+        {isHomeRoute && <Header />}
+        <main className='main'>
+            <Outlet />
+        </main>
         <Footer />
-        {/* <script src="../assets/js/cmedia-hub.js"></script>
-        <script src="../assets/js/upload.js"></script> */}
+
 
         </>
 
