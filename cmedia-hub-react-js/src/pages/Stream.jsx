@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import Media from '../components/Media';
+import MediaItem from '../components/MediaItem';
 
 const Stream = () => {
     return(
@@ -13,15 +13,17 @@ const Stream = () => {
           </div>
         </div>
         <div class="media-right">
-          <Media />
-          <Media />
-          <Media />
-          <Media />
-          <Media />
-          <Media />
+          <MediaItem />
+          <MediaItem />
+          <MediaItem />
+          <MediaItem />
+          <MediaItem />
+          <MediaItem />
+          <MediaItem />
+          <MediaItem />
+          <MediaItem />
 
-         
-        </div>
+         </div>
       </div>
 
     );

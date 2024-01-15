@@ -17,14 +17,13 @@ const BaseLayout = () => {
 
     return(
         <>
-      
         <Navbar />
         {/* Conditionally render the Header only for the home route */}
         {/* {element && element.props?.path === '/' && <Header />} */}
         {isHomeRoute && <Header />}
-        <main className='main'>
-            <Outlet />
-        </main>
+        {/* <main> */}
+        <Outlet />
+        {/* </main> */}
         <Footer />
 
 

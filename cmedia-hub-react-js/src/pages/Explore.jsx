@@ -1,6 +1,8 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import Media from '../components/Media'
+import MediaCard from '../components/MediaCard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 
 const Explore = () => {
@@ -19,7 +21,10 @@ const Explore = () => {
                 <div className="chip">Animation</div>
                 <div className="chip">Thriller</div>
             </div>
-            <div className="filter-container-trigger"><span className="trigger-text">Filters</span><i className="fas fa-sliders"></i></div>    
+            <div className="filter-container-trigger">
+                <span className="trigger-text">Filters</span>
+                <FontAwesomeIcon icon={faFilter} className='icon social-icon'/>
+            </div>    
         </div>
         <div id="filter-container" className="filter-container">
             <button className="filter-cancel">X</button>
@@ -63,12 +68,28 @@ const Explore = () => {
         </div>
         
 
-       <section className="video-list">
-        <Media />
-        <Media />
-        <Media />
-        <Media />
-        <Media />    
+       <section className="media-list">
+            <MediaCard />
+            <MediaCard />
+            <MediaCard />
+            <MediaCard />
+            <MediaCard /> 
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+            <MediaCard />    
+
        </section>
 
         </>

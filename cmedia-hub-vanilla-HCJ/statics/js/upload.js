@@ -106,4 +106,4 @@ function createThumbnail(file, callback) {
       selectedFilesElement.appendChild(selectedMediaItem);
     }
   }
-  
+     

@@ -6,7 +6,6 @@ const Image = (imageAttr) => {
   try {
     // Import image on demand
     const image = require(`../assets/images/${imageAttr.name}`);
-    console.log('---------------------------------------',image);
 
     // If the image doesn't exist. return null
     if (!image) return null;

@@ -1,4 +1,7 @@
 import React, { useRef, useState } from 'react';
+import { Form } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
 // import { FaCloudArrowUp, FaTimes } from 'react-icons/fa';
 // import { FaCloudArrowUp } from 'react-icons/fa';
 
@@ -36,18 +39,14 @@ const Upload = () => {
     };
 
     return (
-        <section className="media-upload-container">
+        <section className="media-upload flex-col">
             <h1 className="media-upload-heading">Upload your Media Files</h1>
-            <article
-                className="media-upload-wrapper flex-cc"
-                onDragOver={(e) => e.preventDefault()}
-                onDrop={handleDrop}
-            >
-                <section className="media-upload-form-container flex-col">
+            <div className="media-upload-wrapper flex-cc">
+                <div className="media-upload-form-container flex-col">
                     <div className="media-upload-icon">
-                        {/* <FaCloudArrowUp /> */}
+                    <FontAwesomeIcon icon={faCloudArrowUp} className='icon'/>
                     </div>
-                    <form onSubmit={handleFormSubmit} encType="multipart/form-data" className="media-upload-form flex-col">
+                    <Form onSubmit={handleFormSubmit} encType="multipart/form-data" className="media-upload-form flex-col">
                         <span className="drag-drop-text" onClick={handleBrowseClick}>
                             Drag and Drop Media Your Files Here!
                         </span>
@@ -59,16 +58,18 @@ const Upload = () => {
                             ref={fileInputRef}
                             style={{ display: 'none' }}
                             onChange={handleFileInputChange}
-                            accept="image/*, audio/*, video/*"
+                            accept="*"
                             multiple
                         />
                         <button type="submit" className="media-upload-btn">
                             Upload
                         </button>
-                    </form>
-                </section>
-                {renderFileInfoSection(selectedFiles, handleCancelFile)}
-            </article>
+                    </Form>
+                </div>
+
+               
+
+            </div>
         </section>
     );
 };

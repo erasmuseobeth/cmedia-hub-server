@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import Media from '../components/Media'
+import Media from '../components/MediaCard'
 
 const Library = () => {
     return(

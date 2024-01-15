@@ -14,7 +14,7 @@ const NavSidebar = () => {
             className='nav-sidebar card flex-col scrollable'>
 
             <NavLink to="/" className="nav-link"  exact activeClassName="active">
-                <FontAwesomeIcon icon={faHouse} className='icon  active'/>
+                <FontAwesomeIcon icon={faHouse} className='icon'/>
                 Home
             </NavLink>
 
