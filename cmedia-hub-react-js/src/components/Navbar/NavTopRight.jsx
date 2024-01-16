@@ -1,5 +1,5 @@
 import React from 'react';
-import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+// import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../assets/css/cmedia-hub.css'
 import { NavLink } from 'react-router-dom';
@@ -15,7 +15,7 @@ const NavTopRight = () => {
       <NavLink to="upload" className="nav-link" exact activeClassName="active">Upload</NavLink>
       <NavLink to="stream" className="nav-link" exact activeClassName="active">Stream</NavLink>
       <NavLink to="explore" className="nav-link" exact activeClassName="active">Explore</NavLink>
-      re
+
       <NavLink to="login" className="nav-link loginbtn" exact activeClassName="active">Login</NavLink>
       <NavLink to="Signup" className="nav-link signupbtn" exact activeClassName="active">Signup</NavLink>
 

@@ -1,12 +1,24 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MediaCard from '../components/MediaCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
+import { listMedia } from '../api/api';
+import { useLoaderData } from "react-router-dom";
+
+
+
+export function loader() {
+    return listMedia();
+}
+
 
 
 const Explore = () => {
-    return(
+    const mediaList = useLoaderData();
+    // console.log(mediaList);
+
+        return(
         <>
          <div className="chips-wrapper flex-sb">
             <div className="chips-container flex">
@@ -69,26 +81,18 @@ const Explore = () => {
         
 
        <section className="media-list">
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard /> 
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
-            <MediaCard />    
+           {/* <MediaCard />     */}
+           {/* <MediaCard />     */}
+            {/* {mediaList.map((media) => (
+                <MediaCard key={media.id} {...media} />
+                ))} */}
+              {mediaList.map((media) => (
+                <Link to={`/stream?id={media.id}`}>
+                    <MediaCard key={media.id} media={media} />
+                </Link>
+))}
+
+
 
        </section>
 

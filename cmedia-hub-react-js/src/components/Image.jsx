@@ -1,7 +1,7 @@
 import React from "react";
 
 const Image = (imageAttr) => {
-    console.log(imageAttr);
+    // console.log(imageAttr);
 
   try {
     // Import image on demand

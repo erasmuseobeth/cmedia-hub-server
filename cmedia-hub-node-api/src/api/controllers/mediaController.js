@@ -50,7 +50,7 @@ const mediaController = {
           publishedAt: media.createdAt,
         }));
     // Send the media list as a response
-    res.json(APIResponse.success({ status:200, data:mediaList, }));
+    res.json(APIResponse.success({ status:200, items:mediaList, }));
   } catch (error) {
     console.error('Error:', error);
     // res.status(500).json({ error: 'Internal Server Error' });
@@ -64,7 +64,7 @@ const mediaController = {
           return res.json(APIResponse.error({ status:500, message:'Please choose a file to Upload', errors:[{}]}));
           }
           const uploadResult = await mediaService.uploadMedia(req.files);
-          res.json(APIResponse.success({ status:200, message:'Files uploaded successfully', data:uploadResult,}));
+          res.json(APIResponse.success({ status:200, message:'Files uploaded successfully', items:uploadResult,}));
         } catch (error) {
           console.error('Error Failed to Upload FIles,:', error);
           res.json(APIResponse.error({ status:500, message:'Internal Server Error', details:[{}]}));
@@ -82,7 +82,7 @@ const mediaController = {
         }
 
         // Assuming you want to send the media object as a JSON response
-        res.json(APIResponse.success({ status:200, data:media }));
+        res.json(APIResponse.success({ status:200, items:media }));
       } catch (error) {
         console.error('Error: Failed to retrieve media:', error);
         // res.status(500).send('Internal Server Error.');
@@ -107,7 +107,7 @@ const mediaController = {
         // Save the updated media object
         await media.save();
         // Respond with the updated media object
-        res.json(APIResponse.success({ status:200, data:media }));
+        res.json(APIResponse.success({ status:200, items:media }));
 
       } catch (error) {
         console.error('Error: Failed to update media:', error);
@@ -165,7 +165,7 @@ const mediaController = {
         res.json(APIResponse.success({
           message: 'Searching and filtering media',
           queryParams: queryParams,
-          data: result,
+          items: result,
         }));
       } catch (error) {
         console.error(error);
@@ -278,7 +278,7 @@ const mediaController = {
         // Return the updated media resource
         res.json(APIResponse.success({
           message: 'Thumbnail updated successfully',
-          data: media,
+          items: media,
         }));
       } catch (error) {
         console.error('Error: Failed to update thumbnail:', error);

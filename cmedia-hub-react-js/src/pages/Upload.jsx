@@ -1,93 +1,210 @@
-import React, { useRef, useState } from 'react';
-import { Form } from 'react-router-dom';
+import React, { useState, useCallback } from 'react';
+// import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
-// import { FaCloudArrowUp, FaTimes } from 'react-icons/fa';
-// import { FaCloudArrowUp } from 'react-icons/fa';
+import { faCloudArrowUp, faTrash } from '@fortawesome/free-solid-svg-icons';
 
+const Upload = ({ ACCEPT, action }) => {
+  // const navigate = useNavigate();
 
-const Upload = () => {
-    const fileInputRef = useRef(null);
-    const [selectedFiles, setSelectedFiles] = useState([]);
+  const [state, setState] = useState({
+    files: [],
+    dragging: false,
+    uploadStatus: 'idle',
+    uploadProgress: 0,
+    allowSelectingFiles: true,
+  });
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        // Add your form submission logic here
-    };
+  const {
+    files,
+    dragging,
+    uploadStatus,
+    uploadProgress,
+    allowSelectingFiles,
+  } = state;
 
-    const handleBrowseClick = () => {
-        fileInputRef.current.click();
-    };
+  const handleDrag = useCallback((e, isDragging) => {
+    e.preventDefault();
+    setState((prev) => ({ ...prev, dragging: isDragging }));
+  }, []);
 
-    const handleDrop = (e) => {
-        e.preventDefault();
-        const droppedFiles = Array.from(e.dataTransfer.files);
-        updateSelectedFiles(droppedFiles);
-    };
+  const handleDrop = useCallback(
+    (e) => {
+      handleDrag(e, false);
+      const newFiles = Array.from(e.dataTransfer.files);
+      setState((prev) => ({ ...prev, files: [...prev.files, ...newFiles] }));
+    },
+    [handleDrag]
+  );
 
-    const handleFileInputChange = (e) => {
-        const selectedFiles = Array.from(e.target.files);
-        updateSelectedFiles(selectedFiles);
-    };
+  const handleFileSelect = useCallback(
+    (e) => {
+      if (!allowSelectingFiles) return;
+      const newFiles = Array.from(e.target.files);
+      setState((prev) => ({ ...prev, files: [...prev.files, ...newFiles] }));
+    },
+    [allowSelectingFiles]
+  );
 
-    const handleCancelFile = (file) => {
-        setSelectedFiles((prevFiles) => prevFiles.filter((prevFile) => prevFile !== file));
-    };
+  const handleRemoveFile = useCallback(
+    (index) => {
+      setState((prev) => ({
+        ...prev,
+        files: prev.files.filter((_, i) => i !== index),
+      }));
+    },
+    []
+  );
 
-    const updateSelectedFiles = (newFiles) => {
-        setSelectedFiles((prevFiles) => [...prevFiles, ...newFiles]);
-    };
+  const uploadFile = async (file) => {
+    try {
+      setState((prev) => ({ ...prev, uploadStatus: 'uploading' }));
 
-    return (
-        <section className="media-upload flex-col">
-            <h1 className="media-upload-heading">Upload your Media Files</h1>
-            <div className="media-upload-wrapper flex-cc">
-                <div className="media-upload-form-container flex-col">
-                    <div className="media-upload-icon">
-                    <FontAwesomeIcon icon={faCloudArrowUp} className='icon'/>
-                    </div>
-                    <Form onSubmit={handleFormSubmit} encType="multipart/form-data" className="media-upload-form flex-col">
-                        <span className="drag-drop-text" onClick={handleBrowseClick}>
-                            Drag and Drop Media Your Files Here!
-                        </span>
-                        <label htmlFor="media-files" className="media-upload-files-label" onClick={handleBrowseClick}>
-                            or Browse Device
-                        </label>
-                        <input
-                            type="file"
-                            ref={fileInputRef}
-                            style={{ display: 'none' }}
-                            onChange={handleFileInputChange}
-                            accept="*"
-                            multiple
-                        />
-                        <button type="submit" className="media-upload-btn">
-                            Upload
-                        </button>
-                    </Form>
-                </div>
+      // Assume the backend API returns the progress of the file upload
+      await simulateFileUpload(file);
 
-               
+      setState((prev) => ({
+        ...prev,
+        uploadProgress: 100,
+        uploadStatus: 'success',
+      }));
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      setState((prev) => ({ ...prev, uploadStatus: 'failure' }));
+    }
+  };
 
+  const simulateFileUpload = (file) => {
+    return new Promise((resolve) => {
+      const delay = 500;
+      const interval = setInterval(() => {
+        setState((prev) => ({
+          ...prev,
+          uploadProgress: Math.min(prev.uploadProgress + 10, 100),
+        }));
+      }, delay / 10);
+
+      setTimeout(() => {
+        clearInterval(interval);
+        resolve();
+      }, delay);
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    setState((prev) => ({
+      ...prev,
+      allowSelectingFiles: false,
+      uploadProgress: 0,
+      uploadStatus: 'uploading',
+    }));
+
+    for (const file of files) {
+      await uploadFile(file);
+    }
+  };
+
+  const handleRefresh = useCallback(() => {
+    setState((prev) => ({
+      ...prev,
+      allowSelectingFiles: true,
+    }));
+
+    // Your logic to refresh the page or component goes here
+    window.location.reload(); // Example: Refresh the entire page
+    // Or, you can use a state update to trigger a component refresh
+    // setSomeState((prev) => !prev);
+  }, []);
+
+  const isUploading = uploadStatus === 'uploading';
+  const isUploadSuccess = uploadStatus === 'success';
+
+  return (
+    <div className="media-upload flex-col">
+      <h1 className="media-upload-heading">Upload your Media Files</h1>
+      <div
+        className={`media-upload-wrapper flex-cc ${
+          dragging ? 'dragging' : ''
+        }`}
+        onDragOver={(e) => handleDrag(e, true)}
+        onDragLeave={() => handleDrag(null, false)}
+        onDrop={handleDrop}
+      >
+        <div className="media-upload-form-container flex-col">
+          <div className="media-upload-icon">
+            <FontAwesomeIcon icon={faCloudArrowUp} className="icon" />
+          </div>
+
+          <form
+            onSubmit={handleSubmit}
+            encType="multipart/form-data"
+            className="media-upload-form flex-col"
+          >
+            <span className="drag-drop-text">
+              Drag and Drop Media Your Files Here!
+            </span>
+            <label htmlFor="media-files" className="media-upload-files-label">
+              Browse Device
+            </label>
+            <input
+              type="file"
+              name="media-files"
+              id="media-files"
+              accept={ACCEPT}
+              multiple
+              onChange={handleFileSelect}
+              disabled={!allowSelectingFiles}
+            />
+            <button
+              type="submit"
+              className="media-upload-btn"
+              disabled={isUploading}
+              onClick={
+                isUploadSuccess
+                  ? handleRefresh
+                  : allowSelectingFiles
+                  ? handleSubmit
+                  : undefined
+              }
+            >
+              {isUploading
+                ? 'Uploading...'
+                : isUploadSuccess
+                ? 'Done'
+                : 'Upload'}
+            </button>
+          </form>
+        </div>
+        <div id="selected-media-files" className="selected-media-files scrollable flex-wr">
+          <h2 className="selected-media-files-heading flex-cc">File Info and Progress</h2>
+          {files.map((file, index) => (
+            <div key={index} className="file-item">
+              <div className="file-thumbnail">
+                <img src="path/to/generic-thumbnail.png" alt="Thumbnail" />
+              </div>
+              <div className="file-details">
+                <span className="file-name">{file.name}</span>
+                {uploadStatus !== 'idle' && (
+                  <>
+                    <progress value={uploadProgress} max={100}></progress>
+                    <span>{uploadProgress}%</span>
+                  </>
+                )}
+                {isUploadSuccess && <span>success</span>}
+                {uploadStatus === 'failure' && <span>failed!</span>}
+              </div>
+              <button
+                type="button"
+                onClick={() => handleRemoveFile(index)}
+                disabled={isUploading}
+              >
+                <FontAwesomeIcon icon={faTrash} className="" />
+              </button>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
-
-const renderFileInfoSection = (files, onCancelFile) => (
-    <section id="selected-media-files" className="selected-media-files scrollable flex-wr">
-        <h2 className="selected-media-files-heading flex-cc">File Info and Progress</h2>
-        <ul>
-            {files.map((file, index) => (
-                <li key={index} className="file-info-item">
-                    <span>{file.name}</span>
-                    <button className="cancel-icon" onClick={() => onCancelFile(file)}>
-                        {/* <FaTimes /> */}
-                    </button>
-                </li>
-            ))}
-        </ul>
-    </section>
-);
 
 export default Upload;
