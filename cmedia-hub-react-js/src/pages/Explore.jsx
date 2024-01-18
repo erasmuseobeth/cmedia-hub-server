@@ -87,7 +87,8 @@ const Explore = () => {
                 <MediaCard key={media.id} {...media} />
                 ))} */}
               {mediaList.map((media) => (
-                <Link to={`/stream?id={media.id}`}>
+                <Link  to={`/stream/?id=${media.id}`}>
+                    
                     <MediaCard key={media.id} media={media} />
                 </Link>
 ))}

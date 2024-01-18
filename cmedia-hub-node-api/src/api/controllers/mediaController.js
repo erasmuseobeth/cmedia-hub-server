@@ -185,7 +185,9 @@ const mediaController = {
           return res.json(APIResponse.error({ status:404, message:'Media not found', details:[{}]}));
 
         }
-        const mediaPath = path.join(__dirname, '..', '..', '..', media.id, media.format);
+        const mediaName = `${media.id}${media.format}`;
+        const mediaPath = path.join(__dirname, '..', '..', '..','media_files',media.type + "s", mediaName);
+        console.log(mediaPath);
         // Get file stats
         const stat = fs.statSync(mediaPath);
         const fileSize = stat.size;

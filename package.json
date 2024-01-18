@@ -8,11 +8,10 @@
     "build-client-server": "concurrently \"npm:build-client\" \"npm:build-server\"",
     "build-client": "cd cmedia-hub-react-js && npm run build",
     "build-server": "cd cmedia-hub-node-api && npm run build"
-<<<<<<< HEAD
+
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
-=======
->>>>>>> 6d83c360374014a34a9a68464214f54282ff0d8f
+
   }
 }
