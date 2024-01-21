@@ -4,7 +4,8 @@
   "description": "node and express api for cmedia-hub-server",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "echo 'No build steps for the server.'"
   },
   "keywords": [
     "home",
@@ -15,6 +16,7 @@
   "author": "Erasmus E Obeth",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "fluent-ffmpeg": "^2.1.2",
     "fs.promises": "^0.1.2",

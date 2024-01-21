@@ -25,7 +25,7 @@ const deleteMediaFromStorage = async (fileUrl) => {
   try {
     // Construct the file path based on the file URL
     const filePath = path.resolve(fileUrl);
-    console.log(`Deleting file media-url: ${filePath} `);
+    console.log(`>>>>>>>>>>>>>>#Deleting file media-url: ${filePath} >>>>>>>>>>>>>>#`);
 
 
     // Check if the file exists before attempting to delete
@@ -34,12 +34,12 @@ const deleteMediaFromStorage = async (fileUrl) => {
     if (fileExists) {
       // Delete the file
       await fs.unlink(filePath);
-      console.log(`File deleted: ${filePath}`);
+      console.log(`>>>>>>>>>>>>>>#File deleted: ${filePath}>>>>>>>>>>>>>>#`);
     } else {
-      console.log(`File not found: ${filePath}`);
+      console.log(`>>>>>>>>>>>>>>#File not found: ${filePath}>>>>>>>>>>>>>>#`);
     }
   } catch (error) {
-    console.error('Error: Failed to delete file from storage:', error);
+    console.error('>>>>>>>>>>>>>>#Error: Failed to delete file from storage:', error, '>>>>>>>>>>>>>>#');
     throw error; // Propagate the error to the calling function
   }
 };

@@ -219,13 +219,14 @@ const mediaController = {
       }
     },
     getMediaThumbnail: async (req, res) => {
+      // overloaded for portrait and normal thumbnails
         try {
           const { thumbnailFile } = req.params;
           const defaultThumnailFile = '/default_media_thumbnail.png'
       
           // Adjust the baseThumbnailPath based on your project structure
-          const requestedThumbnailPath = path.join(__dirname, '..', '..', '..', 'media_files', 'thumbnails', thumbnailFile);
-          const defaultThumbnailPath = path.join(__dirname, '..', '..', '..', 'media_files', 'thumbnails', defaultThumnailFile);
+          const requestedThumbnailPath = path.join(__dirname, '..', '..', '..', 'media_files', 'thumbnails', 'portrait', thumbnailFile);
+          const defaultThumbnailPath = path.join(__dirname, '..', '..', '..', 'media_files', 'thumbnails', 'portrait', 'defaults', defaultThumnailFile);
           try {
             // Check if the requested thumbnail file exists
             await access(requestedThumbnailPath);
@@ -240,6 +241,28 @@ const mediaController = {
           res.json(APIResponse.error({ status:500, message:'Internal Server Error', details:[{}]}));
         }
     },   
+    getLandscapeMediaThumbnail: async (req, res) => {
+      try {
+        const { thumbnailFile } = req.params;
+        const defaultThumnailFile = '/default_media_thumbnail.png'
+    
+        // Adjust the baseThumbnailPath based on your project structure
+        const requestedThumbnailPath = path.join(__dirname, '..', '..', '..', 'media_files', 'thumbnails', 'landscape', thumbnailFile);
+        const defaultThumbnailPath = path.join(__dirname, '..', '..', '..', 'media_files', 'thumbnails', 'landscape', 'defaults', defaultThumnailFile);
+        try {
+          // Check if the requested thumbnail file exists
+          await access(requestedThumbnailPath);
+    
+          // Send the requested thumbnail file as a response
+          res.sendFile(requestedThumbnailPath);
+        } catch (error) {
+          // If the requested thumbnail file doesn't exist or there is an error, send the default thumbnail
+          res.sendFile(defaultThumbnailPath);
+        }
+      } catch (error) {
+        res.json(APIResponse.error({ status:500, message:'Internal Server Error', details:[{}]}));
+      }
+  },   
     updateMediaThumbnail : async (req, res) => {
       try {
         const { id } = req.params;

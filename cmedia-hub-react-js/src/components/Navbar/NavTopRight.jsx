@@ -11,13 +11,13 @@ const NavTopRight = () => {
 
   return ( 
     <div className="nav-right flex">
-      <NavLink to="" className="nav-link" exact activeClassName="active">Home</NavLink>
-      <NavLink to="upload" className="nav-link" exact activeClassName="active">Upload</NavLink>
-      <NavLink to="stream" className="nav-link" exact activeClassName="active">Stream</NavLink>
-      <NavLink to="explore" className="nav-link" exact activeClassName="active">Explore</NavLink>
+      <NavLink to="" className="nav-link" exact="true" activeclassname="active">Home</NavLink>
+      <NavLink to="upload" className="nav-link" activeclassname="active">Upload</NavLink>
+      <NavLink to="stream" className="nav-link"  activeclassname="active">Stream</NavLink>
+      <NavLink to="explore" className="nav-link"  activeclassname="active">Explore</NavLink>
 
-      <NavLink to="login" className="nav-link loginbtn" exact activeClassName="active">Login</NavLink>
-      <NavLink to="Signup" className="nav-link signupbtn" exact activeClassName="active">Signup</NavLink>
+      <NavLink to="login" className="nav-link loginbtn"  activeclassname="active">Login</NavLink>
+      <NavLink to="Signup" className="nav-link signupbtn"  activeclassname="active">Signup</NavLink>
 
       {/* <FontAwesomeIcon icon={faEllipsisVertical} className="more-nav-right icon" id="more-nav-right" onClick={toggleHiddenNav} onMouseOver={toggleHiddenNav} onMouseOut={toggleHiddenNav}/>
       { isHiddenNavVisible ? <HiddenNavTopRight /> : null} */}

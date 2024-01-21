@@ -7,62 +7,6 @@ const util = require('util');
 const readdirAsync = util.promisify(fs.readdir);
 const ffmpeg = require('fluent-ffmpeg');
 
-
-  // const processMedia = async (file, timestamp = '10%', thumbnailOptions = {}) => {
-  // try {
-  //   const fs = require('fs');
-  //   const filePath = file.path; // Use file.path directly
-
-  //   if (!fs.existsSync(filePath)) {
-  //     throw new Error(`File not found at path: ${filePath}`);
-  //   }
-
-  //   const fileBuffer = await fs.readFile(filePath);
-
-  //   console.log(filePath);
-
-  //   const { format: { duration }, streams } = await ffmpeg()
-  //     .input(fileBuffer)
-  //     .ffprobePromise();
-  //     console.error('Error in ffprobePromise:', error.message);
-  //     throw error;
-
-  //   const isAudio = streams.some(stream => stream.codec_type === 'audio');
-
-  //   if (isAudio) {
-  //     // If the file is audio, return duration only
-  //     return { duration };
-  //   }
-
-  //   // Generate the thumbnail filename based on your requirements
-  //   const thumbnailFileName = `thumb_${file.id}.png`;
-
-  //   // Specify the path to store the thumbnail using the hardcoded default folder
-  //   const thumbnailPath = path.join(__dirname, '..', '..', 'media_files', 'thumbnails', thumbnailFileName);
-
-  //   console.log('Generating video thumbnail');
-
-
-  //   await ffmpeg()
-  //     .input(fileBuffer)
-  //     .screenshots({
-  //       timestamps: [timestamp],
-  //       folder: thumbnailPath,  // Use the hardcoded default folder
-  //       filename: thumbnailFileName,
-  //       size: '1280x720',  // Set the default size to 1280x720 unless specified
-  //       ...thumbnailOptions,
-  //     })
-  //     .on('end', () => {
-  //       console.log('Thumbnail generated successfully');
-  //     });
-
-  //   return { duration, thumbnailFileName };
-  // } catch (error) {
-  //   console.error('Error processing media to get duration and generate thumbnail:', error.message);
-  //   throw error;
-  // }
-  // };
-
   const mapMimeTypeToCategory = (mimeType) => {
     if (mimeType.startsWith('image')) {
       return 'image';
@@ -96,45 +40,56 @@ const ffmpeg = require('fluent-ffmpeg');
   // If the mime type is found, return it; otherwise, default to binary data
   return mimeType || 'application/octet-stream';
   };
-  const generateThumbnail = async (file, options = {}) => {
-    // console.log('Input File:', file);
-  
+  const generateThumbnails = async (file, options = {}) => {
     try {
-      // Check if the file object is valid
       if (!file) {
-        throw new Error('Invalid input: File object is missing or invalid');
+        throw new Error('>>>>>>>>>>>>>>#Invalid input: File object is missing or invalid>>>>>>>>>>>>>>#');
       }
   
       const {
-        size = [1280, 720],
+        sizes = [
+          { width: 1280, height: 720, folder: 'landscape' },
+          { width: 250, height: 375, folder: 'portrait' },
+        ],
+        thumbnailDirectory,
         quality = 90,
       } = options;
   
-      // Ensure the 'thumbnails' directory exists
-      const thumbnailDirectory = path.join(__dirname, '..', '..', 'media_files', 'thumbnails');
-      // console.log('Where to save on server',thumbnailDirectory);
-      await fs.mkdir(thumbnailDirectory, { recursive: true });
+      const baseFileName = path.parse(file.filename).name;
   
-      const thumbnailFileName = `thumb_${path.parse(file.filename).name}.png`;
-      const thumbnailFilePath = path.join(thumbnailDirectory, thumbnailFileName);
+      const generateThumbnail = async (size) => {
+        const thumbnailFolder = path.join(thumbnailDirectory, size.folder);
+        await fs.mkdir(thumbnailFolder, { recursive: true });
       
-      const thumbnailBuffer = await sharp(file.path) // Updated to use file.path
-      .resize(...size)
-      .png({ quality })
-      .toBuffer();
+        const thumbnailFileName = `thumb_${baseFileName}.png`;
+        const thumbnailFilePath = path.join(thumbnailFolder, thumbnailFileName);
       
-      // Write the thumbnail buffer to the file
-      await fs.writeFile(thumbnailFilePath, thumbnailBuffer);
+        const thumbnailBuffer = await sharp(file.path)
+          .resize(size.width, size.height, { fit: 'fill', })
+          .png({ quality })
+          .toBuffer();
+      
+        await fs.writeFile(thumbnailFilePath, thumbnailBuffer);
+      
+        console.log(`>>>>>>>>>>>>>>#Thumbnail saved for size ${size.width}x${size.height}:`, thumbnailFilePath, '>>>>>>>>>>>>>>#');
+      
+        return thumbnailFileName;
+      };
+      
   
-      console.log('Thumbnail saved:', thumbnailFilePath);
+      const thumbnailPromises = sizes.map(generateThumbnail);
+      const thumbnails = await Promise.all(thumbnailPromises);
   
-      // return thumbnailUrl;
-      return thumbnailFileName;
-
+  
+      // Prioritize returning the portrait thumbnail by default
+      const portraitThumbnailIndex = sizes.findIndex(size => size.folder === 'portrait');
+      const defaultThumbnailIndex = portraitThumbnailIndex !== -1 ? portraitThumbnailIndex : 0;
+  
+      return thumbnails[defaultThumbnailIndex];
     } catch (error) {
-      console.error(`Error generating thumbnail: ${error.message}`);
+      console.error(`>>>>>>>>>>>>>>#Error generating thumbnails: ${error.message}>>>>>>>>>>>>>>#`);
       return getDefaultThumbnail(file.mimetype);
-    };    
+    }
   };
   const getDefaultThumbnail = (mimeType) => {
     const defaultThumbnails = {
@@ -268,44 +223,12 @@ const ffmpeg = require('fluent-ffmpeg');
     // Return the default thumbnail filename
     return defaultThumbnailFilename;
   }; 
-  const getMediaDurationAndThumbnail = async (file) => {
-    try {
-      const type = mapMimeTypeToMediaType(file.mimetype);
-
-      if (type === 'image') {
-        return { duration: 0, thumbnail: await generateThumbnail(file) };
-      }
-
-      if (type === 'document' || type === 'archive') {
-        return { duration: 0, thumbnail: getDefaultThumbnail(file.mimetype) };
-      }
-
-      if (type === 'audio') {
-        return { duration: await getAudioDuration(file), thumbnail: await getDefaultThumbnail(file.mimetype)}
-      };
-
-      if (type === 'video') {
-      console.log('generating video Thumbnail.............')
-
-        const { duration, thumbnailFileName } = await getVideoDurationAndThumbnail(file);
-        return { duration, thumbnail: thumbnailFileName };
-      }
-      // Handle other types or return default values
-      // return { duration: 0, thumbnail: getDefaultThumbnail(file.mimetype) };
-    } catch (error) {
-      console.log(error);
-      // Handle errors as needed
-      console.log('failed to generate Thumbnail.............');
-
-      // return { duration: 0, thumbnail: 'default_media_thumbnail.png' };
-    }
-  };
-  const getVideoDurationAndThumbnail = async (file, thumbnailOptions = {}) => {
+  const getVideoDurationAndThumbnails = async (file, options = {}) => {
     try {
       const filePath = path.join(__dirname, '..', '..', file.path);
   
       // Use the ffprobe method with a Promise to get video duration
-      const { format: { duration }, streams } = await new Promise((resolve, reject) => {
+      const { format: { duration } } = await new Promise((resolve, reject) => {
         ffmpeg()
           .input(filePath)
           .ffprobe((err, data) => {
@@ -318,42 +241,117 @@ const ffmpeg = require('fluent-ffmpeg');
       });
   
       // Generate a random timestamp between 2% and 95% of the video duration
-      const randomTimestamp = `${Math.random() * (0.97 - 0.02) + 0.02}%`;
+      const randomTimestamp = `${Math.random() *(0.8 - 0.4) + 0.4}%`;
+  
+      // Sizes and folders to generate thumbnails
+      const {
+        sizes = [
+          { width: 1280, height: 720, folder: 'landscape' },
+          { width: 250, height: 375, folder: 'portrait' },
+        ],
+        thumbnailDirectory,
+      } = options;
+  
+      const baseFileName = path.parse(file.filename).name;
+  
+      const generateThumbnail = async (size) => {
+        const thumbnailFolder = path.join(thumbnailDirectory, size.folder);
+        await fs.mkdir(thumbnailFolder, { recursive: true });
+        const thumbnailFileName = `thumb_${baseFileName}.png`;
+        // const thumbnailFileName = `thumb_${baseFileName}_${size.width}x${size.height}.png`;
 
-      // Generate the thumbnail filename based on your requirements
-      const thumbnailFileName = `thumb_${path.parse(file.filename).name}.png`;
   
-      // Specify the path to store the thumbnail using the hardcoded default folder
-      const thumbnailPath = path.join(__dirname, '..', '..', 'media_files', 'thumbnails');
+        return new Promise((resolve, reject) => {
+          console.log(`>>>>>>>>>>>>>>#Generating video thumbnail for size ${size} >>>>>>>>>>>>>>#`);
+          ffmpeg()
+            .input(filePath)
+            .screenshot({
+              timestamps: [randomTimestamp],
+              folder: thumbnailFolder,
+              filename: thumbnailFileName,
+              size: `${size.width}x${size.height}`,
+              fit: 'fill',
+              // ...options.screenshot,
+            })
+            .on('end', () => {
+              console.log(`>>>>>>>>>>>>>>#Thumbnail generated successfully for size ${size}`, '>>>>>>>>>>>>>>#');
+              resolve(thumbnailFileName);
+            })
+            .on('error', (err) => {
+              console.error(`>>>>>>>>>>>>>>#Failed to generate thumbnail for size ${size}:`, err, '>>>>>>>>>>>>>>#');
+              reject(err);
+            });
+        });
+      };
   
-      // Use the screenshot method to generate a single thumbnail with the random timestamp
-      await new Promise((resolve, reject) => {
-        console.log('Generating video thumbnail');
-        ffmpeg()
-          .input(filePath)
-          .screenshot({
-            timestamps: [randomTimestamp],
-            folder: thumbnailPath,
-            filename: thumbnailFileName,
-            size: '1280x720',
-            ...thumbnailOptions,
-          })
-          .on('end', () => {
-            console.log('Thumbnail generated successfully');
-            resolve();
-          })
-          .on('error', (err) => {
-            console.error('Failed to generate thumbnail:', err);
-            reject(err);
-          });
+      const thumbnailPromises = sizes.map(generateThumbnail);
+      const thumbnails = await Promise.all(thumbnailPromises);
+  
+      // Log success for each thumbnail
+      thumbnails.forEach((thumbnail, index) => {
+        const size = sizes[index];
+        console.log('>>>>>>>>>>#Success: Thumbnail for size:', size.width, 'x', size.height, ' - ', thumbnail, '>>>>>>>>>>>>>>#');
       });
   
-      return { duration, thumbnailFileName };
+      // Find the index of the portrait and landscape thumbnails
+      const portraitIndex = sizes.findIndex((size) => size.folder === 'portrait');
+      const landscapeIndex = sizes.findIndex((size) => size.folder === 'landscape');
+  
+      if (portraitIndex !== -1 && landscapeIndex !== -1) {
+        // Return the filenames of both portrait and landscape thumbnails
+        return {
+          duration,
+          portraitThumbnail: thumbnails[portraitIndex],
+          landscapeThumbnail: thumbnails[landscapeIndex],
+        };
+      } else {
+        console.error('>>>>>>>>>>>>>>#Portrait or landscape thumbnail not found in the thumbnails array.>>>>>>>>>>>>>>>>#');
+        throw new Error('>>>>>>>>>>>>>>#Portrait or landscape thumbnail not found.>>>>>>>>>>>#');
+      }
     } catch (error) {
-      console.error('Error processing video to get duration and generate thumbnail:', error.message);
+      console.error('>>>>>>>>>>>>#Error processing video to get duration and generate thumbnails:', error.message, '>>>>>>>>>>>>>>#');
       throw error;
     }
-  }; 
+  };
+  const getMediaDurationAndThumbnails = async (file) => {
+    // base thumbnail directory
+    const thumbnailDirectory = path.join(__dirname, '..', '..', 'media_files', 'thumbnails');
+  
+    await fs.mkdir(thumbnailDirectory, { recursive: true });
+
+    try {
+      const type = mapMimeTypeToMediaType(file.mimetype);
+
+      if (type === 'image') {
+        return { duration: 0, thumbnail: await generateThumbnails(file,  options = {thumbnailDirectory:thumbnailDirectory,}) };
+      }
+
+      if (type === 'document' || type === 'archive') {
+        return { duration: 0, thumbnail: getDefaultThumbnail(file.mimetype) };
+      }
+
+      if (type === 'audio') {
+        return { duration: await getAudioDuration(file), thumbnail: await getDefaultThumbnail(file.mimetype)}
+      };
+
+      if (type === 'video') {
+      console.log('>>>>>>>>>>>>#generating video Thumbnail>>>>>>>>>>>>#')
+
+      const { duration, portraitThumbnail } = await getVideoDurationAndThumbnails(file,  options = {thumbnailDirectory:thumbnailDirectory,});
+        // const { duration, landscapeThumbnail, portraitThumbnail } = await getVideoDurationAndThumbnails(file);
+
+        return { duration, thumbnail: portraitThumbnail  };
+      }
+      // Handle other types or return default values
+      // return { duration: 0, thumbnail: getDefaultThumbnail(file.mimetype) };
+    } catch (error) {
+      console.log(error);
+      // Handle errors as needed
+      console.log('>>>>>>>>>>>#failed to generate Thumbnail>>>>>>>>>>>>#');
+
+      // return { duration: 0, thumbnail: 'default_media_thumbnail.png' };
+    }
+  };
   const getAudioDuration = async (file) => {
     try {
       const filePath = path.join(__dirname, '..', '..', file.path);
@@ -375,12 +373,12 @@ const ffmpeg = require('fluent-ffmpeg');
       const isAudio = streams.some((stream) => stream.codec_type === 'audio');
   
       if (!isAudio) {
-        throw new Error('The provided file is not an audio file.');
+        throw new Error('>>>>>>>>>>>>>>>>>>>>>#The provided file is not an audio file.>>>>>>>>>>>>>>>>#');
       }
   
       return duration;
     } catch (error) {
-      console.error('Error getting audio duration:', error.message);
+      console.error('>>>>>>>>>>>>>>#Error getting audio duration:', error.message, '>>>>>>>>>>>>>>>>#');
       throw error;
     }
   };
@@ -408,18 +406,15 @@ const ffmpeg = require('fluent-ffmpeg');
   
     return `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;
   };
+   
   
-  
-  
-  
- 
 module.exports = {
    getContentType,
     getDestinationDirectory,
     mapMimeTypeToCategory,
     mapMimeTypeToMediaType,
-    generateThumbnail,
-    getMediaDurationAndThumbnail,
+    generateThumbnails,
+    getMediaDurationAndThumbnails,
     getHumanReadableSize,
     getHumanReadableDuration,
     getAudioDuration,

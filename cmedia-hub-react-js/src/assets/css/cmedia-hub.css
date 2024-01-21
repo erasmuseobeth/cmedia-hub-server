@@ -965,80 +965,6 @@ section{
 
 }
 
-.media-list{
-  /* display: grid; */
-  /* grid-template-columns: repeat(8, 8fr); */
-  /* gap: 0.7125rem; */
-  /* position: relative; */
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: -10px;
-    margin-bottom: 0;
-    overflow: hidden;
-}
-/* .video-item{} */
-
-.media-card{
-  width:146px;
-  height: 273px;
-  flex-shrink: 0;
-  margin: 10px;
-  overflow: hidden;
-  font-size: .9em;
-  border-radius: 0.5rem;
-  background-color: #1f232c;
-  position: relative;
-
-
-/* 
-    width: calc(12.5% - 20px); */
-}
-
-.media-card .media-thumbnail{
-  position: relative;
-    width: 100%;
-    padding-bottom: 148%;
-    overflow: hidden;
-    display: block;
-}
-.media-card .media-thumbnail img{
-    overflow: hidden;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-.media-card .media-thumbnail:hover {
-  filter: brightness(50%)
-}
-
-.media-card .media-details{
-  position: relative;
-    padding: 0.5rem;
-    border-radius: 0.5;
-    color:white;
-    /* font-size: .9em; */
-    /* line-height: 1.5; */
-    /* font-weight: 400; */
-}
-
-.media-card .media-title{
-  font-size: .95em;
-    font-weight: 600;
-    margin-bottom: 0;
-    -webkit-line-clamp: 1;
-}
-/* .media-channel{}
-.media-upload-date{}
-.media-icons{}
-.media-duration{} */
-
 .library{
   gap: 0.5rem;
 }
@@ -1686,21 +1612,96 @@ section{
   }
   /* .group-item-value{} */
 
-  /********************* Media streaming page styles *************/
+
+  /********************* explore page styles *******************************/
+
+
+  .media-list{
+    /* display: grid; */
+    /* grid-template-columns: repeat(8, 8fr); */
+    /* gap: 0.7125rem; */
+    /* position: relative; */
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin: -10px;
+      margin-bottom: 0;
+      overflow: hidden;
+  }
+  /* .video-item{} */
   
-.media-player-page{
-  /* width: 100%; */
-  width: 100vw;
+  .media-card{
+    width:146px;
+    height: 273px;
+    flex-shrink: 0;
+    margin: 10px;
+    overflow: hidden;
+    font-size: .9em;
+    border-radius: 0.5rem;
+    background-color: #1f232c;
+    position: relative;
+  
+  }
+  
+  .media-card .media-thumbnail{
+    position: relative;
+    width: 100%;
+    padding-bottom: 148%;
+    overflow: hidden;
+  }
+  .media-card .media-thumbnail img{
+      overflow: hidden;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      border-style: none;
+      overflow-clip-margin: content-box;
+      overflow: clip;
+  }
+  .media-card .media-thumbnail:hover {
+    filter: brightness(50%)
+  }
+  
+  .media-card .media-details{
+    position: relative;
+      padding: 0.5rem;
+      border-radius: 0.5;
+      color:white;
+      font-size: .9em;
+      line-height: 1.4;
+      font-weight: 400;
+  }
+  
+  .media-card .media-title{
+    font-size: .95em;
+      font-weight: 600;
+      margin-bottom: 0;
+      -webkit-line-clamp: 1;
+  }
+  /* .media-channel{}
+  .media-upload-date{}
+  .media-icons{}
+  .media-duration{} */
+  
 
+  /********************* Media streaming page styles ***********************/
+  
+  .media-player-page{
+  width: 100%;
   align-items:flex-start;
-  padding: 1.5rem;
-  padding-right: 1rem;
-
-   gap: 1rem;
+  padding: 1.5rem; gap: 1.5rem;
 }
 
 .media-left{
   flex: 3;
+  padding: 1.5rem;
   padding-top: 0;
 }
 .media-player{
@@ -1713,28 +1714,33 @@ section{
   box-shadow: 0 0 4px rgba(255, 255, 255, 0.25);
 }
 
+
 .media-right{
-  width: 30%;
+  /* width: 30%; */
+  width: 15%;
   overflow-y:hidden;
 }
+
+
+.media-right .media-item{
+  width: 100%;
+  /* height: 6rem; */
+  position: relative;
+}
+
 
 .media-item .media-thumbnail:hover {
   filter: brightness(50%)
 }
-.media-right .media-item{
-  width: 100%;
-  height: 6rem;
-  position: relative;
-}
+
 .media-right .media-thumbnail{
   width: 100%;
-  /* height: 100%;
-  */
   height: 100%;
   border-radius: 0.3rem;
-  object-fit: contain;
-}
+  /* object-fit: contain; */
+  object-fit: fill;
 
+}
 
 .media-right .media-item-name{
   position: absolute;
@@ -1744,10 +1750,5 @@ section{
   color:#ffffff;
 }
 
-/* 
-.library{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
 
-} */
 

@@ -54,24 +54,34 @@ const Upload = ({ ACCEPT, action }) => {
     },
     []
   );
-
   const uploadFile = async (file) => {
     try {
       setState((prev) => ({ ...prev, uploadStatus: 'uploading' }));
-
-      // Assume the backend API returns the progress of the file upload
-      await simulateFileUpload(file);
-
-      setState((prev) => ({
-        ...prev,
-        uploadProgress: 100,
-        uploadStatus: 'success',
-      }));
+  
+      const formData = new FormData();
+      formData.append('files', file);  // 'files' should match the field name expected by your backend
+  
+      const response = await fetch('http://localhost:9000/api/media', {
+        method: 'POST',
+        body: formData,
+      });
+  
+      if (response.ok) {
+        setState((prev) => ({
+          ...prev,
+          uploadProgress: 100,
+          uploadStatus: 'success',
+        }));
+      } else {
+        console.error('Error uploading file:', response.statusText);
+        setState((prev) => ({ ...prev, uploadStatus: 'failure' }));
+      }
     } catch (error) {
       console.error('Error uploading file:', error);
       setState((prev) => ({ ...prev, uploadStatus: 'failure' }));
     }
   };
+  
 
   const simulateFileUpload = (file) => {
     return new Promise((resolve) => {
@@ -91,6 +101,11 @@ const Upload = ({ ACCEPT, action }) => {
   };
 
   const handleSubmit = async (e) => {
+    if (files.length === 0) {
+      console.log('No files to upload');
+      return;
+    }
+
     setState((prev) => ({
       ...prev,
       allowSelectingFiles: false,

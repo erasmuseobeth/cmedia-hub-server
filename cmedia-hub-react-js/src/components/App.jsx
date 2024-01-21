@@ -23,7 +23,9 @@ const routes = createRoutesFromElements(
     <Route path="signup" element={<Signup />} />
     <Route path="admin" element={<Admin />} />
     <Route path="explore" element={<Explore />} loader={exploreLoader}/>
-    <Route path="stream" element={<Stream />} loader={streamLoader} />
+    <Route path="stream/:id" element={<Stream />} loader={streamLoader} />
+    <Route path="stream/" element={<Stream />} loader={streamLoader} />
+
     <Route path="settings" element={<Settings />} />
     <Route path="upload" element={<Upload />} />
     <Route path="download" element={<Download />} />

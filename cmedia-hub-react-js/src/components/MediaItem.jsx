@@ -10,7 +10,7 @@ const MediaItem = ({ media }) => {
             {/* <Image name='fgg.svg' alt="image" className="media-thumbnail"  /> */}
             <img src={thumbnail} alt="image" className="media-thumbnail"/>
 
-            <div class="media-item-name"> {title }</div>
+            <div className="media-item-name"> {title }</div>
 
         </div>
     )

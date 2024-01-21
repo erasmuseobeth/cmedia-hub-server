@@ -10,6 +10,27 @@ const { validateRequestParams } = require('../../middleware/validateRequestParam
 router.route('/thumbnails/:thumbnailFile')
   .get(mediaController.getMediaThumbnail);
 
+  
+// /api/media/thumbnails/:thumbnailFile
+router.route('/thumbnails/portrait/:thumbnailFile')
+.get(mediaController.getMediaThumbnail);
+
+  
+// /api/media/thumbnails/:thumbnailFile
+router.route('/thumbnails/landscape/:thumbnailFile')
+.get(mediaController.getLandscapeMediaThumbnail);
+
+// router.route('/thumbnails/:thumbnailFile?size')
+
+// /api/media/thumbnails/:thumbnailFile
+router.route('/thumbnails/250x375/:thumbnailFile')
+.get(mediaController.getMediaThumbnail);
+
+  
+// /api/media/thumbnails/:thumbnailFile
+router.route('/thumbnails/1280x720/:thumbnailFile')
+.get(mediaController.getLandscapeMediaThumbnail);
+
 // /api/media/stream/:id
 router.route('/stream/:id')
   .get(mediaController.streamMedia);

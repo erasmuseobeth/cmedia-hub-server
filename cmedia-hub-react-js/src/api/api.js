@@ -2,6 +2,7 @@
 
 const API_BASE_URL = '/api'; // Assuming your React app is proxying requests to the backend
 
+
 const listMedia = async () => {
   try {
     const response = await fetch(`${API_BASE_URL}/media`);
@@ -47,26 +48,24 @@ const getMedia = async (id) => {
   }
 };
 
+// const streamMedia = async (mediaId) => {
+//   try {
+//     const response = await fetch(`${API_BASE_URL}/media/stream/${mediaId}`);
 
-
-const streamMedia = async (mediaId) => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/media/stream/${mediaId}`);
-
-    // Check if the request was successful (status code 200)
-    if (response.ok) {
-      const streamBlob = await response.blob();
-      const streamUrl = URL.createObjectURL(streamBlob);
-      return streamUrl;
-    } else {
-      console.error('Error fetching media stream:', response.statusText);
-      return null;
-    }
-  } catch (error) {
-    console.error('Error fetching media stream:', error);
-    return null;
-  }
-};
+//     // Check if the request was successful (status code 200)
+//     if (response.ok) {
+//       const streamBlob = await response.blob();
+//       const streamUrl = URL.createObjectURL(streamBlob);
+//       return streamUrl;
+//     } else {
+//       console.error('Error fetching media stream:', response.statusText);
+//       return null;
+//     }
+//   } catch (error) {
+//     console.error('Error fetching media stream:', error);
+//     return null;
+//   }
+// };
 // const streamMedia = async (id) => {
 //   try {
 //     const response = await fetch(`${API_BASE_URL}/media/stream/${id}`);
@@ -79,4 +78,8 @@ const streamMedia = async (mediaId) => {
 //   }
 // };
 
-export { listMedia, getMedia, streamMedia };
+ const stream =  (id) => {
+  return API_BASE_URL + `/media/stream/${id}`
+ };
+
+export { listMedia, getMedia, stream };
