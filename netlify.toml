@@ -1,6 +1,7 @@
-[build]
-  command = "npm run build" 
-  publish = "build"  
+ [build]
+  command = "npm run build-client && npm run build-server"
+  publish = "cmedia-hub-react-js/build"  # Adjust the publish directory for the client
+  
 
 [build.environment]
   NODE_VERSION = "14" 
