@@ -61,7 +61,7 @@ const Upload = ({ ACCEPT, action }) => {
       const formData = new FormData();
       formData.append('files', file);  // 'files' should match the field name expected by your backend
   
-      const response = await fetch('http://localhost:9000/api/media', {
+      const response = await fetch('/api/media', {
         method: 'POST',
         body: formData,
       });

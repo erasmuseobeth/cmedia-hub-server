@@ -1,8 +1,9 @@
 const express = require('express');
+const history = require('connect-history-api-fallback');
 const APIResponse = require('./middleware/APIResponse.js');
 const cors = require('cors');
 const app = express();
-// const path = require('path');
+const path = require('path');
 
 // Use cors middleware
 app.use(cors());
@@ -11,13 +12,27 @@ app.use(express.json());
 // Middleware to format JSON responses
 app.set('json spaces', 2); // Set the number of spaces for indentation
 
-// Serve static files from the "build" directory
-// app.use(express.static(path.join(__dirname, 'build')));
+// Use history API fallback for React Router
+app.use(history());
 
-// Handle all other routes and serve the main HTML file
-// app.get('*', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+
+const frontendBuild = path.join("..", "..","cmedia-hub-react-js", "build", );
+// console.log('frontendClient:', frontendBuild);
+console.log(path.join(__dirname,frontendBuild))
+
+// Serve static assets from the 'build' folder
+app.use(express.static(path.join(__dirname, frontendBuild)));
+
+// Catch-all route to serve the main HTML file
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, frontendBuild, 'index.html'));
+});
+
+
+
+
+
+
 // Include routes
 app.use('/api', require('./api/routes/apiRoutes'));
 app.use('/api/media', require('./api/routes/mediaRoutes'));
