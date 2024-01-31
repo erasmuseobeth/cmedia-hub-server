@@ -10,23 +10,20 @@
     "build-server": "cd cmedia-hub-node-api && npm run build",
     "install": "cd cmedia-hub-react-js && npm install && cd cmedia-hub-node-api && npm install"
   },
-
   "husky": {
-        "hooks": {
-        "pre-commit": "lint-staged"
-       }
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-
   "lint-staged": {
-   "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-    "prettier --write"
-  ]
- },
-
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
-
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "react-scripts": "^5.0.1"
+  },
   "dependencies": {
     "husky": "^9.0.7",
     "lint-staged": "^15.2.1",
