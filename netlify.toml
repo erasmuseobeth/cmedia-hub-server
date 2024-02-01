@@ -1,8 +1,7 @@
- [build]
-  command = "npm run install && npm run build"
-  publish = "cmedia-hub-react-js/build" 
+[build]
+  command = "npm run build"
+  publish = "cmedia-hub-react-js/build"
 
-  
 
 [build.environment]
   NODE_VERSION = "14" 
