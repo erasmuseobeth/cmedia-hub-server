@@ -1,5 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+// import { createRoot } from 'react-dom';
+
 import { App } from './components/App';
 // import '@fortawesome/fontawesome-svg-core/styles.css';
 // import App from '@components/App';
