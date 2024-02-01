@@ -7,7 +7,7 @@
     "build": "npm run build-client-server",
     "build-client-server": "concurrently \"npm:build-client\" \"npm:build-server\"",
     "build-server": "cd cmedia-hub-node-api && npm run build",
-    "build-client": "cd cmedia-hub-react-js && npm install &&  react-scripts build"
+    "build-client": "cd cmedia-hub-react-js && npm install &&  npm run build"
   },
   
   "husky": {
