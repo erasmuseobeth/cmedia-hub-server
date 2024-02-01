@@ -83,22 +83,22 @@ const Upload = ({ ACCEPT, action }) => {
   };
   
 
-  const simulateFileUpload = (file) => {
-    return new Promise((resolve) => {
-      const delay = 500;
-      const interval = setInterval(() => {
-        setState((prev) => ({
-          ...prev,
-          uploadProgress: Math.min(prev.uploadProgress + 10, 100),
-        }));
-      }, delay / 10);
+  // const simulateFileUpload = (file) => {
+  //   return new Promise((resolve) => {
+  //     const delay = 500;
+  //     const interval = setInterval(() => {
+  //       setState((prev) => ({
+  //         ...prev,
+  //         uploadProgress: Math.min(prev.uploadProgress + 10, 100),
+  //       }));
+  //     }, delay / 10);
 
-      setTimeout(() => {
-        clearInterval(interval);
-        resolve();
-      }, delay);
-    });
-  };
+  //     setTimeout(() => {
+  //       clearInterval(interval);
+  //       resolve();
+  //     }, delay);
+  //   });
+  // };
 
   const handleSubmit = async (e) => {
     if (files.length === 0) {

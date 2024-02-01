@@ -1,13 +1,13 @@
 import React from 'react';
 // import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../../assets/css/cmedia-hub.css'
 import { NavLink } from 'react-router-dom';
-import { useNavbar } from "./NavbarContext";
-import HiddenNavTopRight from './HiddenNavTopRight';
+// import { useNavbar } from "./NavbarContext";
+// import HiddenNavTopRight from './HiddenNavTopRight';
 
 const NavTopRight = () => {
-  const { toggleHiddenNav, isHiddenNavVisible } = useNavbar();
+  // const { toggleHiddenNav, isHiddenNavVisible } = useNavbar();
 
   return ( 
     <div className="nav-right flex">

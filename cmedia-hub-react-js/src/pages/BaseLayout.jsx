@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, useRoutes, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -9,7 +9,7 @@ import Header from '../components/Header';
 
 
 const BaseLayout = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const isHomeRoute = window.location.pathname === '/';
   

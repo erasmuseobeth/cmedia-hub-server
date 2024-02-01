@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import { listMedia, stream } from '../api/api';
-import { useLoaderData, useParams, useSearchParams} from "react-router-dom";
+import { useLoaderData, useParams} from "react-router-dom";
 import MediaItem from '../components/MediaItem';
 
 
@@ -13,11 +13,11 @@ export function loader() {
 const Stream = () => {
   const RecommendedMediaList = useLoaderData();
   const { id } = useParams();
-  const [searchParams, setSearchParams] = useSearchParams()
-  const queryId = searchParams.get('id');
+  // const [searchParams, setSearchParams] = useSearchParams()
+  // const queryId = searchParams.get('id');
 
   // Use the id from useParams if it exists, otherwise use the id from query parameters
-  const streamId = id || queryId;
+  const streamId = id ;
 
     return(
         <div className="media-player-page flex-cc">
